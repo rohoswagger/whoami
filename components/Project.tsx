@@ -5,6 +5,7 @@ import {
   Heading,
   HStack,
   Image,
+  Link,
   Tag,
   Text,
 } from "@chakra-ui/react";
@@ -45,14 +46,14 @@ export function Project(props: ProjectProps) {
         </Heading>
         <Text>{props.data.description}</Text>
         <Center my="6">
-          <Button
-            colorScheme="blue"
-            onClick={() => (window.location.href = props.data.github)}>
-            View on{" "}
-            <Box pl="5px">
-              <FaGithub />
-            </Box>
-          </Button>
+          <Link href={props.data.github} isExternal>
+            <Button colorScheme="blue">
+              View on{" "}
+              <Box pl="5px">
+                <FaGithub />
+              </Box>
+            </Button>
+          </Link>
         </Center>
       </Box>
     </Center>
