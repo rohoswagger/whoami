@@ -14,6 +14,7 @@ export default function Home() {
     <Box>
       <Head>
         <title>Roshan Desai</title>
+        <link rel="icon" href="./icon.ico" />
       </Head>
 
       <main>
