@@ -4,7 +4,7 @@ My [personal website](https://roshn.dev)!
 
 ## Development
 
-Install the necessary dependencies via ```yarn```.
+Install the necessary dependencies via `yarn`.
 
 ```bash
 yarn dev

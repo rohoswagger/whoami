@@ -1,10 +1,10 @@
 [
-    {
-        "tags": ["nextjs", "react", "typescript", "Chakra UI"],
-        "title": ["Personal Website"],
-        "dates": ["March 2024 - Present"],
-        "description": "My personal website!",
-        "image": "/portfolio.png",
-        "github": "https://github.com/Roshan-D/webfolio"
-    }
+  {
+    "tags": ["nextjs", "react", "typescript", "Chakra UI"],
+    "title": ["Personal Website"],
+    "dates": ["March 2024 - Present"],
+    "description": "My personal website!",
+    "image": "/portfolio.png",
+    "github": "https://github.com/Roshan-D/webfolio"
+  }
 ]

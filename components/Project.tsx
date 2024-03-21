@@ -48,7 +48,10 @@ export function Project(props: ProjectProps) {
           <Button
             colorScheme="blue"
             onClick={() => (window.location.href = props.data.github)}>
-            View on <Box pl="5px"><FaGithub/></Box>
+            View on{" "}
+            <Box pl="5px">
+              <FaGithub />
+            </Box>
           </Button>
         </Center>
       </Box>

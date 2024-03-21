@@ -9,7 +9,7 @@ export const Footer = () => (
     pb="3"
     justifyContent="center">
     <Stack spacing={{ base: "4", md: "5" }}>
-      <Stack justify="space-between" direction="row" align="center" >
+      <Stack justify="space-between" direction="row" align="center">
         <ButtonGroup variant="tertiary" gap="12">
           <SocialLinks />
         </ButtonGroup>
