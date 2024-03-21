@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.ico" />
         <meta
           name="description"
           content="Hey! I'm Roshan Desai. Here you can learn more about my experiences and projects."
