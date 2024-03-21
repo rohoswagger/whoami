@@ -1,12 +1,12 @@
+import { Metadata } from "next";
 import Head from "next/head";
 import { Providers } from "./providers";
 
-export const metadata = {
+export const metadata: Metadata = {
   icons: {
     icon: ["/favicon.ico", "favicon-16x16.png", "favicon-32x32.png"],
     apple: ["apple-touch-icon.png"],
-    android: ["android-chrome-192x192.png", "android-chrome-512x512.png"],
-    ms: ["mstile-150x150.png"],
+    shortcut: ["apple-touch-icon.png"],
   },
 };
 
