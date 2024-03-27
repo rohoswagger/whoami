@@ -26,7 +26,7 @@ interface ProjectProps {
 export function Project(props: ProjectProps) {
   return (
     <Center as="section" py="5vh">
-      <Box maxW="420px" minW="50vw" bg="white" p="6">
+      <Box maxW="420px" minW="50vw" bg="white" p="6" boxShadow="0px 0px 20px 1px">
         <Image
           src={props.data.image}
           alt={props.data.title}

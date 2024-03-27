@@ -8,6 +8,7 @@ import styles from "../styles/animations.module.css";
 // import { Project } from "../components/project";
 import { Project } from "@/components/Project";
 import { FaArrowDown } from "react-icons/fa";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -65,6 +66,9 @@ export default function Home() {
         {projects.map((proj: any) => (
           <Project data={proj} key={proj} />
         ))}
+        <Flex justifyContent="center">
+          <Contact />
+        </Flex>
       </main>
     </Box>
   );
