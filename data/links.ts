@@ -1,11 +1,11 @@
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const LINKS = [
-  { name: "/roshan-d", icon: faGithub, href: "https://github.com/roshan-d" },
+  { name: "/roshan-d", icon: FaGithub, href: "https://github.com/roshan-d" },
   {
     name: "/in/desairoshan",
-    icon: faLinkedin,
+    icon: FaLinkedin,
     href: "https://linkedin.com/in/desairoshan",
   },
-  // { name: "rohod04@gmail.com", icon: faPaperPlane, href: "mailto:rohod04@gmail.com" },
+  // { name: "rohod04@gmail.com", icon: FaPaperPlane, href: "mailto:rohod04@gmail.com" },
 ];
