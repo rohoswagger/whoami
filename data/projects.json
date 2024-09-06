@@ -1,10 +1,24 @@
 [
   {
-    "tags": ["nextjs", "react", "typescript", "Chakra UI"],
-    "title": ["Personal Website"],
-    "dates": ["March 2024 - Present"],
-    "description": "My personal website!",
-    "image": "/portfolio.png",
-    "github": "https://github.com/Roshan-D/webfolio"
+    "tags": ["next.js", "typescript", "FastAPI", "Python", "AWS", "Docker"],
+    "title": "Soloflow",
+    "description": "Google Docs for Audio",
+    "image": "/soloflow.png",
+    "url": "https://soloflow.io"
+  },
+  {
+    "tags": [
+      "Chakra UI",
+      "typescript",
+      "node.js",
+      "GCP",
+      "MongoDB",
+      "React Native"
+    ],
+    "title": "AppGT",
+    "description": "Mobile application with 5k+ downloads for Georgia Tech's annual hackathon with over 1200+ participants",
+    "image": "/hackgt.png",
+    "url": "https://apps.apple.com/us/app/hexlabs/id1478268737",
+    "github": "https://github.com/HackGT/AppGT"
   }
 ]
