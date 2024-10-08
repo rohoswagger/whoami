@@ -22,6 +22,10 @@ body {
   font-family: var(--font-indie-flower);
 }
 
+p {
+  font-family: var(--font-figtree);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

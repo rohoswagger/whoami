@@ -18,6 +18,11 @@ const indieFlower = localFont({
   src: "./fonts/IndieFlower-Regular.ttf",
   variable: "--font-indie-flower",
 });
+const figtree = localFont({
+  src: "./fonts/Figtree.ttf",
+  variable: "--font-figtree",
+  weight: "200",
+});
 
 export const metadata: Metadata = {
   title: "yo!",
@@ -32,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${indieFlower.variable} antialiased bg-tan-100`}>
+        className={`${geistSans.variable} ${geistMono.variable} ${indieFlower.variable} ${figtree.variable} antialiased bg-tan-100`}>
         <div className="min-h-screen flex flex-col">
           <Navbar />
 
