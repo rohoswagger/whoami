@@ -1,4 +1,4 @@
-import Commandments from "@/components/Commandments";
+import Commandments from "@/app/components/Commandments";
 
 export default function CommandmentsPage() {
   return (

@@ -19,15 +19,13 @@ Dark Mode
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-indie-flower);
-}
-
-p {
   font-family: var(--font-figtree);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-indie-flower);
+}
+
+p, ul, li {
+  font-family: var(--font-figtree);
 }

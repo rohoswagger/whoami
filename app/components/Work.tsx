@@ -7,10 +7,10 @@ import projectsData from "@/data/projects.json";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 // Logos
-import robinhoodLogo from "@/app/logos/robinhood.png";
-import itentialLogo from "@/app/logos/itential.png";
-import pGLogo from "@/app/logos/pg.png";
-import hexlabsLogo from "@/app/logos/hexlabs.png";
+import robinhoodLogo from "@/public/logos/robinhood.png";
+import itentialLogo from "@/public/logos/itential.png";
+import pGLogo from "@/public/logos/pg.png";
+import hexlabsLogo from "@/public/logos/hexlabs.png";
 
 const Work = () => {
   return (

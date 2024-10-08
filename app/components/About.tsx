@@ -2,8 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import pfp from "@/app/pfp.png";
-import Link from "./_common/Link";
+import pfp from "@/public/pfp.png";
+import Link from "@/app/components/_common/Link";
 
 const Section = ({
   title,
@@ -63,7 +63,7 @@ const About: React.FC = () => {
                   </Link>
                   .
                 </p>
-                <p>
+                <div>
                   Check out
                   <ul className="list-disc list-inside">
                     <li>
@@ -82,7 +82,7 @@ const About: React.FC = () => {
                       My <Link href="/work" openInNewTab={false}>media diet</Link>
                     </li> */}
                   </ul>
-                </p>
+                </div>
               </>
             }
           />

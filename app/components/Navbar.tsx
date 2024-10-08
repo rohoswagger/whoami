@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
       {!isMobile && (
         <div className="absolute left-5 mt-60">
           {LINKS.map((link) => (
-            <Link key={link.href} href={link.href} className="block mb-5">
+            <Link key={link.href} href={link.href} className="block mb-5 text-sm">
               <link.icon className="w-6 h-6" />
             </Link>
           ))}
@@ -49,6 +49,9 @@ const Navbar: React.FC = () => {
         </Link>
         <Link href="/work" className="mx-3 text-2xl">
           Work
+        </Link>
+        <Link href="/blog" className="mx-3 text-2xl">
+          Blog
         </Link>
       </nav>
     </header>
