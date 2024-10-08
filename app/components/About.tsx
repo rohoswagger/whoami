@@ -131,6 +131,18 @@ const About: React.FC = () => {
               </>
             }
           />
+          <Section
+            title="What's my favorite color?"
+            content={
+              <>
+                <p>
+                  My favorite color is{" "}
+                  <span className="text-purple-500">purple</span>, if you can&apos;t
+                  tell by the theme 😆.
+                </p>
+              </>
+            }
+          />
         </div>
       </div>
     </div>

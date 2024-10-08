@@ -26,11 +26,16 @@ const Navbar: React.FC = () => {
         RD
       </div>
       {!isMobile && (
-        <div className="absolute left-5 mt-60">
+        <div className="absolute left-5 mt-80">
           {LINKS.map((link) => (
-            <Link key={link.href} href={link.href} className="block mb-5 text-sm">
-              <link.icon className="w-6 h-6" />
-            </Link>
+            <div key={link.href} className="relative group">
+              <Link href={link.href} className="block mb-5 text-sm">
+                <link.icon className="w-6 h-6" />
+              </Link>
+              <div className="absolute left-full top-1/2 transform -translate-y-1/2 ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                {link.name}
+              </div>
+            </div>
           ))}
         </div>
       )}
