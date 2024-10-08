@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import debounce from "lodash/debounce";
 
-interface BlogSearchProps {
+interface WritingsSearchProps {
   onSearch: (query: string) => void;
 }
 
-const BlogSearch: React.FC<BlogSearchProps> = ({ onSearch }) => {
+const WritingsSearch: React.FC<WritingsSearchProps> = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Create a debounced version of onSearch
@@ -28,11 +28,11 @@ const BlogSearch: React.FC<BlogSearchProps> = ({ onSearch }) => {
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search blog posts..."
+        placeholder="Search writings..."
         className="w-full px-4 py-2 border border-purple-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-400"
       />
     </div>
   );
 };
 
-export default BlogSearch;
+export default WritingsSearch;

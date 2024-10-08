@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import BlogSearch from "./BlogSearch";
-import { getSortedPosts, BlogPost } from "@/utils/blogUtils";
+import WritingsSearch from "./WritingsSearch";
+import { getSortedPosts, Writing } from "@/utils/writingsUtils";
 
-const BlogList: React.FC = () => {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
+const Writings: React.FC = () => {
+  const [posts, setPosts] = useState<Writing[]>([]);
+  const [filteredPosts, setFilteredPosts] = useState<Writing[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const BlogList: React.FC = () => {
         setPosts(allPosts);
         setFilteredPosts(allPosts);
       } catch (err) {
-        setError("Failed to load blog posts. Please try again later.");
+        setError("Failed to load writings. Please try again later.");
       }
     };
     fetchPosts();
@@ -40,11 +40,11 @@ const BlogList: React.FC = () => {
 
   return (
     <>
-      <BlogSearch onSearch={handleSearch} />
+      <WritingsSearch onSearch={handleSearch} />
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {filteredPosts.map((post) => (
           <Link
-            href={`/blog/${post.id}`}
+            href={`/writings/${post.id}`}
             key={post.id}
             className="block bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
             <Image
@@ -77,4 +77,4 @@ const BlogList: React.FC = () => {
   );
 };
 
-export default BlogList;
+export default Writings;

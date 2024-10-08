@@ -3,13 +3,13 @@
 import fs from "fs";
 import path from "path";
 
-const blogJsonPath = path.join(process.cwd(), "data/blog.json");
-const allPostsData: RawBlogPost[] = JSON.parse(
-  fs.readFileSync(blogJsonPath, "utf8")
+const writingsJsonPath = path.join(process.cwd(), "data/writings.json");
+const allPostsData: RawWriting[] = JSON.parse(
+  fs.readFileSync(writingsJsonPath, "utf8")
 );
-const publicBlogImagePath = path.join(process.cwd(), "public/blog");
+const publicWritingsImagePath = path.join(process.cwd(), "public/writings");
 
-interface RawBlogPost {
+interface RawWriting {
   id: string;
   title: string;
   date: string;
@@ -17,21 +17,21 @@ interface RawBlogPost {
   featuredImage: string;
 }
 
-export interface BlogPost extends RawBlogPost {
+export interface Writing extends RawWriting {
   content: string;
 }
 
 function getImagePath(imageName: string): string {
-  const imagePath = path.join(publicBlogImagePath, imageName);
+  const imagePath = path.join(publicWritingsImagePath, `${imageName}.jpg`);
   if (fs.existsSync(imagePath)) {
-    return `/blog/${imageName}`;
+    return `/writings/${imageName}.jpg`;
   } else {
     console.warn(`Image not found: ${imagePath}`);
-    return "/blog/placeholder.jpg";
+    return "/writings/placeholder.jpg";
   }
 }
 
-export async function getSortedPosts(): Promise<BlogPost[]> {
+export async function getSortedPosts(): Promise<Writing[]> {
   try {
     const postsWithContent = await Promise.all(
       allPostsData.map(async (post) => {
@@ -46,12 +46,12 @@ export async function getSortedPosts(): Promise<BlogPost[]> {
 
     return postsWithContent.sort((a, b) => (a.date < b.date ? 1 : -1));
   } catch (error) {
-    console.error("Error reading blog posts:", error);
+    console.error("Error reading data:", error);
     return [];
   }
 }
 
-export async function getBlogPost(id: string): Promise<BlogPost | null> {
+export async function getWriting(id: string): Promise<Writing | null> {
   try {
     const postData = allPostsData.find((p) => p.id === id);
 
@@ -65,18 +65,18 @@ export async function getBlogPost(id: string): Promise<BlogPost | null> {
     }
     return null;
   } catch (error) {
-    console.error(`Error reading blog post ${id}:`, error);
+    console.error(`Error reading ${id}:`, error);
     return null;
   }
 }
 
 async function getContent(postId: string): Promise<string | null> {
   try {
-    const postsDirectory = path.join(process.cwd(), "data/blog");
+    const postsDirectory = path.join(process.cwd(), "data/writings");
     const fullPath = path.join(postsDirectory, `${postId}.md`);
     return fs.readFileSync(fullPath, "utf8");
   } catch (error) {
-    console.error(`Error reading blog post ${postId}:`, error);
+    console.error(`Error reading data ${postId}:`, error);
     return null;
   }
 }

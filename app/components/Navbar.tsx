@@ -50,8 +50,8 @@ const Navbar: React.FC = () => {
         <Link href="/work" className="mx-3 text-2xl">
           Work
         </Link>
-        <Link href="/blog" className="mx-3 text-2xl">
-          Blog
+        <Link href="/writings" className="mx-3 text-2xl">
+          Writings
         </Link>
       </nav>
     </header>

@@ -74,7 +74,7 @@ const About: React.FC = () => {
                     </li>
                     <li>
                       My{" "}
-                      <Link href="/blog" openInNewTab={false}>
+                      <Link href="/writings" openInNewTab={false}>
                         attempts at writing
                       </Link>
                     </li>
