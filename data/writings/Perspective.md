@@ -1,2 +1,1 @@
-# Perspective
-
+Perspective is one of those topics that I hold really dear to me, and it's weirdly one of the most important qualities I want to instill in my children.
