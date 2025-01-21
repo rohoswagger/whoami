@@ -32,7 +32,7 @@ const Writings: React.FC = async () => {
                       require(`../../public${post.image}`);
                       return post.image;
                     } catch {
-                      return '/img/default.jpg';
+                      return "/img/default.jpg";
                     }
                   })()}
                   alt={post.title}
