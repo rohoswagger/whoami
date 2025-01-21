@@ -3,10 +3,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-const writingsJsonPath = path.join(process.cwd(), "public", "writings");
-const filenames = fs
-  .readdirSync(writingsJsonPath)
-  .filter((file) => file.endsWith(".md"));
 
 export interface Writing {
   id: string;
@@ -16,54 +12,57 @@ export interface Writing {
   content: string;
 }
 
-const posts = filenames.map((filename) => {
-  const filePath = path.join(writingsJsonPath, filename);
-  const fileContents = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(fileContents);
-
-  return {
-    id: filename.replace(".md", ""),
-    ...data,
-    content,
-  } as Writing;
-});
-
-const publicWritingsImagePath = path.join(process.cwd(), "public/writings/img");
-
-function getImagePath(imageName: string): string {
-  const imagePath = path.join(publicWritingsImagePath, `${imageName}.jpg`);
-  if (fs.existsSync(imagePath)) {
-    return `/writings/img/${imageName}.jpg`;
-  } else {
-    return "/writings/img/placeholder.jpg";
-  }
-}
+// Cache the posts at the module level
+let cachedPosts: Writing[] | null = null;
 
 export async function getSortedPosts(): Promise<Writing[]> {
   try {
-    return posts
-      .map((post) => ({
-        ...post,
-        featuredImage: getImagePath(post.id),
-      }))
-      .sort((a: Writing, b: Writing) => {
-        if (a.id === "whoami") return -1;
-        if (b.id === "whoami") return 1;
-        return a.date > b.date ? 1 : -1;
-      });
+    // Return cached posts if available
+    if (cachedPosts) {
+      return cachedPosts;
+    }
+
+    const writingsDirectory = path.join(process.cwd(), "public", "writings");
+    const filenames = fs
+      .readdirSync(writingsDirectory)
+      .filter((file) => file.endsWith(".md"));
+
+    const posts = filenames.map((filename) => {
+      const filePath = path.join(writingsDirectory, filename);
+      const fileContents = fs.readFileSync(filePath, "utf-8");
+      const { data, content } = matter(fileContents);
+
+      return {
+        id: filename.replace(".md", ""),
+        title: data.title || "",
+        date: data.date || "",
+        featuredImage: `/writings/img/${filename
+          .toLowerCase()
+          .replace(".md", "")}.jpg`,
+        content,
+      } as Writing;
+    });
+
+    // Sort posts and cache them
+    cachedPosts = posts.sort((a, b) => {
+      if (a.id === "whoami") return -1;
+      if (b.id === "whoami") return 1;
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+
+    return cachedPosts;
   } catch (error) {
-    console.error("Error reading data:", error);
+    console.error("Error reading posts:", error);
     return [];
   }
 }
 
 export async function getWriting(id: string): Promise<Writing | null> {
   try {
-    const postData = posts.find((p) => p.id === id);
-
-    return postData || null;
+    const posts = await getSortedPosts();
+    return posts.find((post) => post.id === id) || null;
   } catch (error) {
-    console.error(`Error reading ${id}:`, error);
+    console.error(`Error reading post ${id}:`, error);
     return null;
   }
 }
