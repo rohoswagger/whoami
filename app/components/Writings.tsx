@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { getSortedPosts, Writing } from "@/utils/writingsUtils";
 
+import fs from "fs";
+
 const Writings: React.FC = () => {
   const [posts, setPosts] = useState<Writing[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -26,6 +28,7 @@ const Writings: React.FC = () => {
   }
 
   console.log(posts);
+  console.log(fs.readdirSync(process.cwd() + "/public/writings"));
 
   return (
     <div className="relative w-full px-8">
