@@ -44,7 +44,11 @@ export async function getSortedPosts(): Promise<Writing[]> {
       })
     );
 
-    return postsWithContent.sort((a, b) => (a.date < b.date ? 1 : -1));
+    return postsWithContent.sort((a, b) => {
+      if (a.id === "whoami") return -1;
+      if (b.id === "whoami") return 1;
+      return a.date < b.date ? 1 : -1;
+    });
   } catch (error) {
     console.error("Error reading data:", error);
     return [];

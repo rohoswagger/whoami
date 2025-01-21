@@ -1,6 +1,5 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { getWriting } from "@/utils/writingsUtils";
 import ReactMarkdown from "react-markdown";
@@ -14,35 +13,24 @@ export default async function Writing({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Link
-        href="/writings"
-        className="mb-4 inline-block hover:scale-110">
+    <div className="container mr-auto px-4 py-8 md:w-1/2">
+      <Link href="/writings" className="mb-4 inline-block hover:scale-110">
         &larr; See all Writings
       </Link>
-      <Image
-        src={post.featuredImage}
-        alt={post.title}
-        width={800}
-        height={400}
-        className="w-full h-64 object-cover rounded-lg mb-8"
-      />
-      <h1 className="text-4xl md:text-5xl font-bold mb-4">
-        {post.title}
-      </h1>
+      <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
       <div className="flex items-center justify-between mb-8">
-        <p className="text-gray-600">
-          {new Date(post.date).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "2-digit",
-          })}
-        </p>
+        {post.date && (
+          <p className="text-gray-600">
+            {new Date(post.date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "2-digit",
+            })}
+          </p>
+        )}
         <div className="flex gap-2">
           {post.tags.map((tag: string) => (
-            <span
-              key={tag}
-              className="px-2 py-1 rounded-full text-sm">
+            <span key={tag} className="px-2 py-1 rounded-full text-sm">
               {tag}
             </span>
           ))}

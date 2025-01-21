@@ -69,12 +69,14 @@ const Writings: React.FC = () => {
                 />
                 <div className="p-6">
                   <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
-                  <p className="text-gray-600 mb-2">
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                    })}
-                  </p>
+                  {post.date && (
+                    <p className="text-gray-600 mb-2">
+                      {new Date(post.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                      })}
+                    </p>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
                       <span
