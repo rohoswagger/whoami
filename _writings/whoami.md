@@ -15,7 +15,7 @@ My lifelong dream has been to be an entrepreneur, and im currently trying to mak
 
 ## journey
 
-I grew up in suburban Atlanta, and I eventually found my way to Georgia Tech studying Computer Science. There, I learned most of what I know about software engineering from an organization i was a part of called [Hexlabs](https://hexlabs.org). I built tech for hackathons, and I learned a lot about building products for actual users. I did a couple internships in college, and ultimately ended up enjoying my time at Robinhood so much so that I dropped out of my master's program to work there. During my last semester of college, I went through [CreateX](https://create-x.gatech.edu/) and got my first taste of building startups working on Soloflow. It was a great learning experience, and made it clear to me that this is the path I want to take.
+I grew up in suburban Atlanta, and I eventually found my way to Georgia Tech studying Computer Science. There, I learned most of what I know about software engineering from an organization i was a part of called [Hexlabs](https://hexlabs.org). I built tech for hackathons, and I learned a lot about building products for actual users. I did a couple internships in college, and ultimately ended up enjoying my time at Robinhood so much so that I dropped out of my master's program to work there. During my last semester of college, I went through [Create-X](https://create-x.gatech.edu/) and got my first taste of building startups working on Soloflow. It was a great learning experience, and made it clear to me that this is the path I want to take.
 
 ## how i work
 
