@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
             </div>
             <div className="fixed bottom-8 right-24 md:bottom-12 md:right-16 transform rotate-90 origin-right">
               <span className="font-mono text-sm md:text-base tracking-widest">
-                "ROSHAN DESAI"
+                &quot;ROSHAN DESAI&quot;
               </span>
             </div>
           </>
