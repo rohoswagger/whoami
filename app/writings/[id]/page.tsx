@@ -17,6 +17,7 @@ export default async function Writing({ params }: { params: { id: string } }) {
         &larr; See all Writings
       </Link>
       <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
+      <p className="text-gray-500 mb-4">{post.date}</p>
 
       <ReactMarkdown
         components={{
