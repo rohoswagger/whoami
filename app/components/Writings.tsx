@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { getAllWritings, Writing } from "@/utils/writingsUtils";
+import { getAllWritings } from "@/utils/writingsUtils";
 
 const Writings: React.FC = async () => {
   const posts = await getAllWritings();
