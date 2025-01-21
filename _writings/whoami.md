@@ -1,5 +1,6 @@
 ---
 title: "whoami"
+date: "03-04-2004"
 ---
 
 > This is a living document. Last updated January 20th, 2025

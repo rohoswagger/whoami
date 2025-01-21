@@ -1,22 +1,10 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import { getAllWritings, Writing } from "@/utils/writingsUtils";
 
-const Writings: React.FC = () => {
-  const [posts, setPosts] = React.useState<Writing[]>([]);
-
-  React.useEffect(() => {
-    const fetchPosts = async () => {
-      const result = await getAllWritings();
-      setPosts(result);
-    };
-    fetchPosts();
-  }, []);
-
-  console.log(posts);
+const Writings: React.FC = async () => {
+  const posts = await getAllWritings();
 
   return (
     <div className="relative w-full px-8">
@@ -38,14 +26,21 @@ const Writings: React.FC = () => {
                 href={`/writings/${post.slug}`}
                 key={post.slug}
                 className="block bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                {/* <Image
-                  src={post.featuredImage}
+                <Image
+                  src={(() => {
+                    try {
+                      require(`../../public${post.image}`);
+                      return post.image;
+                    } catch {
+                      return '/img/default.jpg';
+                    }
+                  })()}
                   alt={post.title}
                   width={400}
                   height={200}
                   className="w-full h-48 object-cover"
                   priority={false}
-                /> */}
+                />
                 <div className="p-6">
                   <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
                 </div>

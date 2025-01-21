@@ -18,10 +18,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Creating a new writing
 
-\*Note: All 3 of these steps require one id as filename
+\*Note: Both of these steps require one id as filename
 
-1. Create a new markdown file in the `public/writings` directory.
-2. Add the image to the `public/writings/img` directory, if there is one.
+1. Create a new markdown file in the `_writings` directory.
+2. Add the image to the `public/img` directory, if there is one.
 
 ## Deploy on Vercel
 

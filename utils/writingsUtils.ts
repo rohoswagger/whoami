@@ -8,6 +8,7 @@ export interface Writing {
   slug: string;
   title: string;
   date: string;
+  image: string;
   content: string;
 }
 
@@ -37,9 +38,13 @@ export async function getWritingBySlug(slug: string): Promise<Writing> {
   const filePath = path.join(writingsDirectory, `${fileName}.md`);
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
+
+  let imagePath = `/img/${fileName}.jpg`;
+
   return {
     slug: slug,
     ...data,
+    image: imagePath,
     content,
   } as Writing;
 }
