@@ -1,10 +1,5 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaPaperPlane,
-  FaBook,
-  FaSpotify,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaBook, FaSpotify } from "react-icons/fa";
+import { FaX, FaXTwitter } from "react-icons/fa6";
 
 export const LINKS = [
   { name: "Github", icon: FaGithub, href: "https://github.com/roshan-d" },
@@ -14,9 +9,9 @@ export const LINKS = [
     href: "https://linkedin.com/in/desairoshan",
   },
   {
-    name: "Email",
-    icon: FaPaperPlane,
-    href: "mailto:rohod04@gmail.com",
+    name: "X",
+    icon: FaXTwitter,
+    href: "https://x.com/rohoswagger",
   },
   {
     name: "Goodreads",

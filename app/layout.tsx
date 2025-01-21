@@ -1,32 +1,11 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
-import Footer from "@/app/components/Footer";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-const indieFlower = localFont({
-  src: "./fonts/IndieFlower-Regular.ttf",
-  variable: "--font-indie-flower",
-});
-const figtree = localFont({
-  src: "./fonts/Figtree.ttf",
-  variable: "--font-figtree",
-  weight: "200",
-});
+// import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
-  title: "yo!",
-  description: "roshan's portfolio",
+  title: "Roshan Desai",
+  description: "Software Engineer & Builder",
 };
 
 export default function RootLayout({
@@ -36,16 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${indieFlower.variable} ${figtree.variable} antialiased bg-tan-100`}>
-        <div className="min-h-screen flex flex-col">
+      <body className="antialiased bg-white px-8">
+        <div className="min-h-screen relative">
           <Navbar />
-
-          <main className="flex-grow flex justify-center items-center mx-4 md:mx-40">
-            {children}
-          </main>
-
-          <Footer />
+          <main className="w-full">{children}</main>
         </div>
       </body>
     </html>

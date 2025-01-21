@@ -19,45 +19,46 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <header className="p-4 flex justify-between items-center">
-      <div
-        className="text-2xl font-bold cursor-pointer"
-        onClick={() => router.push("/")}>
-        RD
-      </div>
-      {!isMobile && (
-        <div className="absolute left-5 mt-80">
-          {LINKS.map((link) => (
-            <div key={link.href} className="relative group">
-              <Link href={link.href} className="block mb-5 text-sm">
-                <link.icon className="w-6 h-6" />
-              </Link>
-              <div className="absolute left-full top-1/2 transform -translate-y-1/2 ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                {link.name}
-              </div>
-            </div>
-          ))}
+    <header className="p-2 sm:p-4 flex flex-wrap justify-between items-center">
+      <nav className="flex items-center flex-grow justify-end">
+        <div
+          className="text-xl sm:text-2xl font-bold cursor-pointer mr-auto"
+          onClick={() => router.push("/")}>
+          RD
         </div>
-      )}
-      <nav className="flex items-center">
-        {isMobile && (
-          <div className="flex mr-4">
-            {LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className="mr-3">
-                <link.icon className="w-6 h-6" />
-              </Link>
-            ))}
-          </div>
+        <div className="flex items-center ml-4 space-x-2 sm:space-x-4">
+          <Link href="/work" className="text-sm sm:text-lg">
+            Work
+          </Link>
+          <Link href="/writings" className="text-sm sm:text-lg">
+            Writings
+          </Link>
+        </div>
+        {!isMobile && (
+          <>
+            <div className="fixed top-1/2 transform space-y-4">
+              {LINKS.map((link) => (
+                <div key={link.href} className="relative group">
+                  <Link
+                    href={link.href}
+                    className="block"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <link.icon className="w-6 h-6" />
+                  </Link>
+                  <div className="absolute right-full top-1/2 transform -translate-y-1/2 mr-1 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                    {link.name}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="fixed bottom-8 right-24 md:bottom-12 md:right-16 transform rotate-90 origin-right">
+              <span className="font-mono text-sm md:text-base tracking-widest">
+                "ROSHAN DESAI"
+              </span>
+            </div>
+          </>
         )}
-        <Link href="/about" className="mx-3 text-2xl">
-          About
-        </Link>
-        <Link href="/work" className="mx-3 text-2xl">
-          Work
-        </Link>
-        <Link href="/writings" className="mx-3 text-2xl">
-          Writings
-        </Link>
       </nav>
     </header>
   );

@@ -39,50 +39,58 @@ const Writings: React.FC = () => {
   }
 
   return (
-    <>
-      <WritingsSearch onSearch={handleSearch} />
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {filteredPosts.length === 0 ? (
-          <div className="text-gray-500">Nothin to see here 🙈</div>
-        ) : (
-          filteredPosts.map((post) => (
-            <Link
-              href={`/writings/${post.id}`}
-              key={post.id}
-              className="block bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-              <Image
-                src={post.featuredImage}
-                alt={post.title}
-                width={400}
-                height={200}
-                className="w-full h-48 object-cover"
-                priority={false}
-              />
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-2 text-purple-600">
-                  {post.title}
-                </h2>
-                <p className="text-gray-600 mb-2">
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                  })}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-sm">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Link>
-          ))
-        )}
+    <div className="relative w-full">
+      {/* Background Text */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-10 transform -rotate-45 text-gray-100 text-[150px] md:text-[200px] font-bold whitespace-nowrap">
+          WRITE
+        </div>
       </div>
-    </>
+
+      {/* Main content */}
+      <div className="relative z-10">
+        <WritingsSearch onSearch={handleSearch} />
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {filteredPosts.length === 0 ? (
+            <div className="text-gray-500">Nothin to see here 🙈</div>
+          ) : (
+            filteredPosts.map((post) => (
+              <Link
+                href={`/writings/${post.id}`}
+                key={post.id}
+                className="block bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+                <Image
+                  src={post.featuredImage}
+                  alt={post.title}
+                  width={400}
+                  height={200}
+                  className="w-full h-48 object-cover"
+                  priority={false}
+                />
+                <div className="p-6">
+                  <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
+                  <p className="text-gray-600 mb-2">
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                    })}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {post.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 rounded-full text-sm">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            ))
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 

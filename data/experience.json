@@ -1,37 +1,37 @@
 [
   {
-    "title": "Software Engineer",
+    "title": "SWE",
     "company": "Robinhood",
     "company_url": "https://robinhood.com",
     "dates": "May 2024 - Present",
-    "description": "Building new ways to trade options on Robinhood"
+    "description": "Building new ways to trade options"
   },
   {
     "title": "Director of Technology",
     "company": "Hexlabs",
     "company_url": "https://hexlabs.org",
-    "dates": "January 2022 - Present",
-    "description": "Building applications for Georgia Tech's annual hackathon with over 1200+ participants. Spreading the joy of hacking to all!"
+    "dates": "January 2022 - January 2024",
+    "description": "Building applications for running hackathons"
   },
   {
-    "title": "Software Engineer Intern",
+    "title": "SWE Intern",
     "company": "Robinhood",
     "company_url": "https://robinhood.com",
     "dates": "May 2023 - September 2023",
-    "description": "Built tools to decrease customer wait times in Robinhood's customer support queue! Decreased wait times by 30%!"
+    "description": "Decreased wait times in Robinhood's customer support queue by 30%"
   },
   {
-    "title": "Software Engineer Intern",
+    "title": "SWE Intern",
     "company": "Itential",
     "company_url": "https://itential.com",
     "dates": "January 2023 - May 2023",
-    "description": "Built test infrastructure for Itential's flagship network automation product. Saved developers thousands of hours of manual debugging."
+    "description": "Saved developers thousands of hours of manual debugging with better test infra"
   },
   {
-    "title": "ML Infrastructure Engineer Intern",
+    "title": "AI Engineer Intern",
     "company": "Procter & Gamble",
     "company_url": "https://pg.com",
     "dates": "May 2022 - September 2022",
-    "description": "Built an ML platform to optimize the long range forecasting of P&G's supply chains. Saved P&G 1.1 million dollars annually!"
+    "description": "Saved P&G 1.1 million dollars annually by optimizing long range forecasting of supply chains"
   }
 ]

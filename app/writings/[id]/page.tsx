@@ -17,7 +17,7 @@ export default async function Writing({ params }: { params: { id: string } }) {
     <div className="container mx-auto px-4 py-8">
       <Link
         href="/writings"
-        className="text-purple-600 hover:text-purple-800 mb-4 inline-block">
+        className="mb-4 inline-block hover:scale-110">
         &larr; See all Writings
       </Link>
       <Image
@@ -27,16 +27,22 @@ export default async function Writing({ params }: { params: { id: string } }) {
         height={400}
         className="w-full h-64 object-cover rounded-lg mb-8"
       />
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 text-purple-400">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4">
         {post.title}
       </h1>
       <div className="flex items-center justify-between mb-8">
-        <p className="text-gray-600">{post.date}</p>
+        <p className="text-gray-600">
+          {new Date(post.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "2-digit",
+          })}
+        </p>
         <div className="flex gap-2">
           {post.tags.map((tag: string) => (
             <span
               key={tag}
-              className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-sm">
+              className="px-2 py-1 rounded-full text-sm">
               {tag}
             </span>
           ))}
