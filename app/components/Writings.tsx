@@ -1,34 +1,22 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { getSortedPosts, Writing } from "@/utils/writingsUtils";
-
-import fs from "fs";
+// import Image from "next/image";
+import { getAllWritings, Writing } from "@/utils/writingsUtils";
 
 const Writings: React.FC = () => {
-  const [posts, setPosts] = useState<Writing[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const [posts, setPosts] = React.useState<Writing[]>([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const fetchPosts = async () => {
-      try {
-        const allPosts = await getSortedPosts();
-        setPosts(allPosts);
-      } catch (err) {
-        setError("Failed to load writings. Please try again later.");
-      }
+      const result = await getAllWritings();
+      setPosts(result);
     };
     fetchPosts();
   }, []);
 
-  if (error) {
-    return <div className="text-red-500">{error}</div>;
-  }
-
   console.log(posts);
-  console.log(fs.readdirSync(process.cwd() + "/public/writings"));
 
   return (
     <div className="relative w-full px-8">
@@ -47,27 +35,19 @@ const Writings: React.FC = () => {
           ) : (
             posts.map((post) => (
               <Link
-                href={`/writings/${post.id}`}
-                key={post.id}
+                href={`/writings/${post.slug}`}
+                key={post.slug}
                 className="block bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-                <Image
+                {/* <Image
                   src={post.featuredImage}
                   alt={post.title}
                   width={400}
                   height={200}
                   className="w-full h-48 object-cover"
                   priority={false}
-                />
+                /> */}
                 <div className="p-6">
                   <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
-                  {post.date && (
-                    <p className="text-gray-600 mb-2">
-                      {new Date(post.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                      })}
-                    </p>
-                  )}
                 </div>
               </Link>
             ))

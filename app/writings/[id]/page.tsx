@@ -1,14 +1,13 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getWriting } from "@/utils/writingsUtils";
+import { getWritingBySlug } from "@/utils/writingsUtils";
 import ReactMarkdown from "react-markdown";
 
 export default async function Writing({ params }: { params: { id: string } }) {
-  const post = await getWriting(params.id);
+  const post = await getWritingBySlug(params.id);
 
   if (!post) {
-    console.log("post not found");
     notFound();
   }
 
@@ -18,17 +17,6 @@ export default async function Writing({ params }: { params: { id: string } }) {
         &larr; See all Writings
       </Link>
       <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
-      <div className="flex items-center justify-between mb-8">
-        {post.date && (
-          <p className="text-gray-600">
-            {new Date(post.date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "2-digit",
-            })}
-          </p>
-        )}
-      </div>
 
       <ReactMarkdown
         components={{
