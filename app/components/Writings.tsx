@@ -25,6 +25,8 @@ const Writings: React.FC = () => {
     return <div className="text-red-500">{error}</div>;
   }
 
+  console.log(posts);
+
   return (
     <div className="relative w-full px-8">
       {/* Background Text */}
