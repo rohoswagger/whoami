@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { Experience, Project } from "./types";
-import experienceData from "@/data/experience.json";
-import projectsData from "@/data/projects.json";
+import experienceData from "@/public/data/experience.json";
+import projectsData from "@/public/data/projects.json";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 // Logos
@@ -83,9 +83,7 @@ const ExperienceList = ({ experiences }: { experiences: Experience[] }) => (
 const ProjectList = ({ projects }: { projects: Project[] }) => (
   <div className="grid grid-cols-1 gap-6 md:gap-12 px-6">
     {projects.map((project, index) => (
-      <div
-        key={index}
-        className="border-2 rounded-lg p-4 md:p-6 shadow-lg">
+      <div key={index} className="border-2 rounded-lg p-4 md:p-6 shadow-lg">
         <div>
           <h3 className="text-xl md:text-3xl font-semibold mb-2">
             {project.title}

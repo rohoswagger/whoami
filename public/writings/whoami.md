@@ -1,3 +1,7 @@
+---
+title: "whoami"
+---
+
 > This is a living document. Last updated January 20th, 2025
 
 hi! I'm Roshan. I'm curious about the world and how it can be changed with technology. I thought I'd start by telling you a little about myself and how I like to work.

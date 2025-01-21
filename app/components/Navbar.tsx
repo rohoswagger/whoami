@@ -1,6 +1,6 @@
 "use client";
 
-import { LINKS } from "@/data/links";
+import { LINKS } from "@/public/data/links";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";

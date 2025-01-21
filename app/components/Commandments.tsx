@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import commandmentsData from "@/data/commandments.json";
+import commandmentsData from "@/public/data/commandments.json";
 
 interface Commandment {
   number: number;

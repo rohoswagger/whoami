@@ -28,13 +28,6 @@ export default async function Writing({ params }: { params: { id: string } }) {
             })}
           </p>
         )}
-        <div className="flex gap-2">
-          {post.tags.map((tag: string) => (
-            <span key={tag} className="px-2 py-1 rounded-full text-sm">
-              {tag}
-            </span>
-          ))}
-        </div>
       </div>
 
       <ReactMarkdown
