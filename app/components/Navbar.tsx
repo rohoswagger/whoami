@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
         </div>
         {!isMobile && (
           <>
-            <div className="fixed top-1/2 transform space-y-4">
+            <div className="fixed top-1/3 transform space-y-4">
               {LINKS.map((link) => (
                 <div key={link.href} className="relative group">
                   <Link
@@ -52,8 +52,8 @@ const Navbar: React.FC = () => {
                 </div>
               ))}
             </div>
-            <div className="fixed bottom-8 right-24 md:bottom-12 md:right-16 transform rotate-90 origin-right">
-              <span className="font-mono text-sm md:text-base tracking-widest">
+            <div className="fixed bottom-12 right-8 sm:right-12 md:right-16 transform rotate-90 origin-right">
+              <span className="font-mono text-xs sm:text-sm md:text-base tracking-widest px-4">
                 &quot;ROSHAN DESAI&quot;
               </span>
             </div>

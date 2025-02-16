@@ -5,20 +5,5 @@
     "description": "Google Docs for Audio",
     "image": "/soloflow.png",
     "url": "https://soloflow.io"
-  },
-  {
-    "tags": [
-      "Chakra UI",
-      "typescript",
-      "node.js",
-      "GCP",
-      "MongoDB",
-      "React Native"
-    ],
-    "title": "AppGT",
-    "description": "Mobile App for running hackathons with 5k+ downloads",
-    "image": "/hackgt.png",
-    "url": "https://apps.apple.com/us/app/hexlabs/id1478268737",
-    "github": "https://github.com/HackGT/AppGT"
   }
 ]
