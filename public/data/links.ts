@@ -1,13 +1,8 @@
-import { FaGithub, FaLinkedin, FaBook, FaSpotify } from "react-icons/fa";
-import { FaX, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaBook, FaSpotify } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export const LINKS = [
   { name: "Github", icon: FaGithub, href: "https://github.com/roshan-d" },
-  {
-    name: "LinkedIn",
-    icon: FaLinkedin,
-    href: "https://linkedin.com/in/desairoshan",
-  },
   {
     name: "X",
     icon: FaXTwitter,
