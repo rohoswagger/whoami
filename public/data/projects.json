@@ -1,9 +1,0 @@
-[
-  {
-    "tags": ["next.js", "typescript", "FastAPI", "Python", "AWS", "Docker"],
-    "title": "Soloflow",
-    "description": "Google Docs for Audio",
-    "image": "/soloflow.png",
-    "url": "https://soloflow.io"
-  }
-]

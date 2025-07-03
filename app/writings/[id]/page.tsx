@@ -12,125 +12,76 @@ export default async function Writing({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="container mr-auto px-4 py-8 md:w-1/2">
-      <Link href="/writings" className="mb-4 inline-block hover:scale-110">
-        &larr; See all Writings
-      </Link>
-      <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
-      <p className="text-gray-500 mb-4">{post.date}</p>
+    <div className="min-h-screen px-4 py-12">
+      <div className="max-w-3xl mx-auto">
+        <Link 
+          href="/writings" 
+          className="inline-block mb-8 text-gray-600 hover:text-gray-900 transition-colors"
+        >
+          ← back to writings
+        </Link>
+        
+        <article className="prose prose-lg max-w-none">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            {post.title}
+          </h1>
+          <p className="text-gray-600 mb-8 text-lg">
+            {post.date}
+          </p>
 
-      <ReactMarkdown
-        components={{
-          h1: ({ ...props }) => (
-            <h1
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "2em",
-                fontWeight: "bold",
-                marginBottom: "0.5em",
-              }}
-              {...props}
-            />
-          ),
-          h2: ({ ...props }) => (
-            <h2
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "1.5em",
-                fontWeight: "bold",
-                marginBottom: "0.5em",
-              }}
-              {...props}
-            />
-          ),
-          h3: ({ ...props }) => (
-            <h3
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "1.17em",
-                fontWeight: "bold",
-                marginBottom: "0.5em",
-              }}
-              {...props}
-            />
-          ),
-          p: ({ ...props }) => (
-            <p
-              style={{
-                marginBottom: "1em",
-                fontFamily: "var(--font-sans)",
-              }}
-              {...props}
-            />
-          ),
-          ul: ({ ...props }) => (
-            <ul
-              style={{
-                paddingLeft: "2em",
-                marginBottom: "1em",
-                listStyleType: "disc",
-                fontFamily: "var(--font-sans)",
-              }}
-              {...props}
-            />
-          ),
-          ol: ({ ...props }) => (
-            <ol
-              style={{
-                paddingLeft: "2em",
-                marginBottom: "1em",
-                listStyleType: "decimal",
-                fontFamily: "var(--font-sans)",
-              }}
-              {...props}
-            />
-          ),
-          li: ({ ...props }) => (
-            <li
-              style={{
-                marginBottom: "0.5em",
-                fontFamily: "var(--font-sans)",
-              }}
-              {...props}
-            />
-          ),
-          a: ({ ...props }) => (
-            <a
-              style={{
-                color: "blue",
-                textDecoration: "underline",
-                fontFamily: "var(--font-sans)",
-              }}
-              {...props}
-            />
-          ),
-          blockquote: ({ ...props }) => (
-            <blockquote
-              style={{
-                borderLeft: "5px solid #ccc",
-                paddingLeft: "1em",
-                marginLeft: "0",
-                marginRight: "0",
-                fontFamily: "var(--font-sans)",
-              }}
-              {...props}
-            />
-          ),
-          code: ({ ...props }) => (
-            <pre
-              style={{
-                backgroundColor: "#f0f0f0",
-                padding: "1em",
-                borderRadius: "5px",
-                overflowX: "auto",
-                fontFamily: "var(--font-mono)",
-              }}>
-              <code {...props} />
-            </pre>
-          ),
-        }}>
-        {post.content || ""}
-      </ReactMarkdown>
+          <ReactMarkdown
+            components={{
+              h1: ({ ...props }) => (
+                <h1 className="text-3xl font-bold mt-8 mb-4 text-gray-900" {...props} />
+              ),
+              h2: ({ ...props }) => (
+                <h2 className="text-2xl font-semibold mt-6 mb-3 text-gray-900" {...props} />
+              ),
+              h3: ({ ...props }) => (
+                <h3 className="text-xl font-semibold mt-4 mb-2 text-gray-900" {...props} />
+              ),
+              p: ({ ...props }) => (
+                <p className="mb-4 text-gray-700 leading-relaxed" {...props} />
+              ),
+              ul: ({ ...props }) => (
+                <ul className="list-disc pl-6 mb-4 space-y-2 text-gray-700" {...props} />
+              ),
+              ol: ({ ...props }) => (
+                <ol className="list-decimal pl-6 mb-4 space-y-2 text-gray-700" {...props} />
+              ),
+              li: ({ ...props }) => (
+                <li className="text-gray-700" {...props} />
+              ),
+              a: ({ ...props }) => (
+                <a 
+                  className="text-blue-600 hover:text-blue-800 underline" 
+                  {...props} 
+                />
+              ),
+              blockquote: ({ ...props }) => (
+                <blockquote 
+                  className="border-l-4 border-gray-300 pl-4 my-6 italic text-gray-600"
+                  {...props} 
+                />
+              ),
+              code: ({ ...props }) => (
+                <code 
+                  className="bg-gray-100 px-2 py-1 rounded text-sm font-mono"
+                  {...props} 
+                />
+              ),
+              pre: ({ ...props }) => (
+                <pre 
+                  className="bg-gray-100 p-4 rounded-lg overflow-x-auto my-6"
+                  {...props} 
+                />
+              ),
+            }}
+          >
+            {post.content || ""}
+          </ReactMarkdown>
+        </article>
+      </div>
     </div>
   );
 }

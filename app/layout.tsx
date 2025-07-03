@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
-// import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
   title: "Roshan Desai",
-  description: "Software Engineer & Builder",
+  description: "Builder & Event Organizer",
 };
 
 export default function RootLayout({
@@ -15,10 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-white px-8">
-        <div className="min-h-screen relative">
+      <body className="antialiased bg-white">
+        <div className="min-h-screen">
           <Navbar />
-          <main className="w-full">{children}</main>
+          <main className="pt-20">{children}</main>
         </div>
       </body>
     </html>
