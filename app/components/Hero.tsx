@@ -6,12 +6,12 @@ const Hero: React.FC = () => {
       <div className="max-w-2xl text-center space-y-8">
         {/* Main heading */}
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900">
-          hey, i&apos;m roshan
+          yo! i&apos;m roshan
         </h1>
         
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-          i build things and organize events that bring people together
+          i build things
         </p>
         
         {/* What I've done */}
