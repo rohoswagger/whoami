@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
       <div className="max-w-2xl text-center space-y-8">
         {/* Main heading */}
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900">
-          hey, i'm roshan
+          hey, i&apos;m roshan
         </h1>
         
         {/* Subtitle */}
@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
         {/* What I've done */}
         <div className="space-y-4">
           <p className="text-lg text-gray-700">
-            so far, i've organized hackathons with <span className="font-semibold">1200+ attendees</span> in college
+            so far, i&apos;ve organized hackathons with <span className="font-semibold">1200+ attendees</span> in college
           </p>
           <p className="text-base text-gray-500">
             more things coming soon...
