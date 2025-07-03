@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { LINKS } from "@/public/data/links";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -21,6 +22,27 @@ const Navbar: React.FC = () => {
           >
             writings
           </Link>
+          <Link 
+            href="/content" 
+            className="text-gray-700 hover:text-gray-900 transition-colors"
+          >
+            content
+          </Link>
+          
+          {/* Social links - small and subtle */}
+          <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-200">
+            {LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+              >
+                <link.icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
         </nav>
       </div>
     </header>

@@ -1,8 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { LINKS } from "@/public/data/links";
-
 const Hero: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center px-4">
@@ -25,21 +22,6 @@ const Hero: React.FC = () => {
           <p className="text-base text-gray-500">
             more things coming soon...
           </p>
-        </div>
-        
-        {/* Links */}
-        <div className="flex justify-center space-x-6 pt-8">
-          {LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
-            >
-              <link.icon className="w-6 h-6" />
-            </a>
-          ))}
         </div>
         
         {/* Contact */}
