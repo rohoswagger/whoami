@@ -12,8 +12,23 @@ export default async function Writing({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="min-h-screen px-4 py-8 md:py-12">
+    <div className="min-h-screen px-4 py-8 md:py-12 relative">
+      {/* Background image with overlay */}
+      <div 
+        className="fixed inset-0 z-0"
+        style={{
+          backgroundImage: `url(${post.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.03
+        }}
+      />
+      
+      {/* Content overlay */}
+      <div className="relative z-10 bg-white/95 backdrop-blur-sm rounded-lg shadow-sm">
       <div className="max-w-3xl mx-auto">
+        <div className="p-4 md:p-8">
         <Link 
           href="/writings" 
           className="inline-block mb-6 md:mb-8 text-sm md:text-base text-gray-600 hover:text-gray-900 transition-colors"
@@ -81,6 +96,8 @@ export default async function Writing({ params }: { params: { id: string } }) {
             {post.content || ""}
           </ReactMarkdown>
         </article>
+        </div>
+      </div>
       </div>
     </div>
   );
