@@ -13,9 +13,4 @@ export const LINKS = [
     icon: FaBook,
     href: "https://goodreads.com/rohoswagger",
   },
-  {
-    name: "Spotify",
-    icon: FaSpotify,
-    href: "https://open.spotify.com/user/thbelp9jszh1iympwqi9xo9ky?si=97451a6032e04b75",
-  },
 ];
