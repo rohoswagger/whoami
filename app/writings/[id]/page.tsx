@@ -21,12 +21,12 @@ export default async function Writing({ params }: { params: { id: string } }) {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          opacity: 0.03
+          opacity: 0.15
         }}
       />
       
       {/* Content overlay */}
-      <div className="relative z-10 bg-white/95 backdrop-blur-sm rounded-lg shadow-sm">
+      <div className="relative z-10 bg-white/90 backdrop-blur-md rounded-lg shadow-lg">
       <div className="max-w-3xl mx-auto">
         <div className="p-4 md:p-8">
         <Link 
