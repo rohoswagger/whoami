@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className="antialiased bg-white">
         <div className="min-h-screen">
           <Navbar />
-          <main className="pt-20">{children}</main>
+          <main className="pt-16 md:pt-20">{children}</main>
         </div>
       </body>
     </html>

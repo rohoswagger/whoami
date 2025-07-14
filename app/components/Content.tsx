@@ -4,22 +4,22 @@ import Link from "next/link";
 
 const Content: React.FC = () => {
   return (
-    <div className="min-h-screen px-4 py-12">
+    <div className="min-h-screen px-4 py-8 md:py-12">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center">
           content
         </h1>
         
-        <p className="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-600 text-center mb-8 md:mb-12 max-w-2xl mx-auto">
           things that shape how i think
         </p>
         
-        <div className="space-y-10">
+        <div className="space-y-8 md:space-y-10">
           <div>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+            <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-gray-900">
               Books
             </h2>
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-1 md:space-y-2 text-sm md:text-base text-gray-700">
               <li>• Zero to One - Peter Thiel</li>
               <li>• The Hard Thing About Hard Things - Ben Horowitz</li>
               <li>• Atomic Habits - James Clear</li>
@@ -31,10 +31,10 @@ const Content: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+            <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-gray-900">
               Podcasts
             </h2>
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-1 md:space-y-2 text-sm md:text-base text-gray-700">
               <li>• The Tim Ferriss Show</li>
               <li>• How I Built This</li>
               <li>• The Knowledge Project</li>
@@ -46,10 +46,10 @@ const Content: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+            <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-gray-900">
               Movies & Shows
             </h2>
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-1 md:space-y-2 text-sm md:text-base text-gray-700">
               <li>• The Social Network</li>
               <li>• Steve Jobs</li>
               <li>• Silicon Valley (HBO)</li>
@@ -61,10 +61,10 @@ const Content: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+            <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4 text-gray-900">
               Blogs & Newsletters
             </h2>
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-1 md:space-y-2 text-sm md:text-base text-gray-700">
               <li>• Paul Graham Essays</li>
               <li>• First Round Review</li>
               <li>• Hacker News</li>
@@ -76,22 +76,22 @@ const Content: React.FC = () => {
           </div>
         </div>
         
-        <div className="text-center mt-16">
-          <p className="text-gray-600 mb-4">
+        <div className="text-center mt-12 md:mt-16">
+          <p className="text-sm md:text-base text-gray-600 mb-4">
             got recommendations?
           </p>
           <a 
             href="mailto:rohoswagger@gmail.com" 
-            className="text-blue-600 hover:text-blue-800 underline"
+            className="text-sm md:text-base text-blue-600 hover:text-blue-800 underline"
           >
             send them my way
           </a>
         </div>
         
-        <div className="text-center mt-8">
+        <div className="text-center mt-6 md:mt-8">
           <Link 
             href="/" 
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            className="text-sm md:text-base text-gray-600 hover:text-gray-900 transition-colors"
           >
             ← back home
           </Link>
