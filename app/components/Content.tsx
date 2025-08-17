@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 const Content: React.FC = () => {
   return (
     <div className="min-h-screen px-4 py-8 md:py-12">
@@ -21,9 +19,9 @@ const Content: React.FC = () => {
             </h2>
             <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-gray-700">
               <li>
-                • Can't Hurt Me - David Goggins
+                • Can&apos;t Hurt Me - David Goggins
                 <div className="ml-5 text-gray-500 text-xs md:text-sm">
-                  we are all capable of more than we think - your "limits" are only self-imposed
+                  we are all capable of more than we think - your &quot;limits&quot; are only self-imposed
                 </div>
               </li>
               <li>
@@ -53,7 +51,7 @@ const Content: React.FC = () => {
               <li>
                 • Glucose Revolution - Jesse Inchauspe
                 <div className="ml-5 text-gray-500 text-xs md:text-sm">
-                  got diagnosed with prediabetes at 20 despite being in great shape (5'9 140lbs with ~10% body fat), these small hacks helped me reverse it by 21
+                  got diagnosed with prediabetes at 20 despite being in great shape (5&apos;9 140lbs with ~10% body fat), these small hacks helped me reverse it by 21
                 </div>
               </li>
             </ul>
