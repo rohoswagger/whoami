@@ -2,6 +2,7 @@
 title: "Screens need to die"
 date: "09-29-2025"
 ---
+
 I can’t remember the last time I went a full day without looking at a screen. I wonder if you can. That worries me.
 
 —
