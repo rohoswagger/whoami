@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     };
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://rohoswagger.vercel.app";
-  const imageUrl = `${baseUrl}${post.image}`;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://rohoswagger.com";
+  const imageUrl = `${post.image}`;
 
   return {
     title: `${post.title} | Roshan Desai`,
@@ -61,7 +61,7 @@ export default async function Writing({ params }: { params: { id: string } }) {
     <div className="min-h-screen">
       {/* Hero section with image */}
       <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${post.image})`,
@@ -69,12 +69,12 @@ export default async function Writing({ params }: { params: { id: string } }) {
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/40" />
-        
+
         {/* Hero content */}
         <div className="relative z-10 h-full flex flex-col justify-end p-4 md:p-8">
           <div className="max-w-3xl mx-auto w-full">
-            <Link 
-              href="/writings" 
+            <Link
+              href="/writings"
               className="inline-block mb-4 md:mb-6 text-sm md:text-base text-white/80 hover:text-white transition-colors"
             >
               ← back to writings
@@ -88,7 +88,7 @@ export default async function Writing({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
-      
+
       {/* Content section */}
       <div className="px-4 py-8 md:py-12">
         <div className="max-w-3xl mx-auto">
@@ -117,27 +117,27 @@ export default async function Writing({ params }: { params: { id: string } }) {
                   <li className="text-sm md:text-base text-gray-700" {...props} />
                 ),
                 a: ({ ...props }) => (
-                  <a 
-                    className="text-blue-600 hover:text-blue-800 underline break-words" 
-                    {...props} 
+                  <a
+                    className="text-blue-600 hover:text-blue-800 underline break-words"
+                    {...props}
                   />
                 ),
                 blockquote: ({ ...props }) => (
-                  <blockquote 
+                  <blockquote
                     className="border-l-4 border-gray-300 pl-3 md:pl-4 my-4 md:my-6 italic text-sm md:text-base text-gray-600"
-                    {...props} 
+                    {...props}
                   />
                 ),
                 code: ({ ...props }) => (
-                  <code 
+                  <code
                     className="bg-gray-100 px-1.5 md:px-2 py-0.5 md:py-1 rounded text-xs md:text-sm font-mono break-words"
-                    {...props} 
+                    {...props}
                   />
                 ),
                 pre: ({ ...props }) => (
-                  <pre 
+                  <pre
                     className="bg-gray-100 p-3 md:p-4 rounded-lg overflow-x-auto my-4 md:my-6 text-xs md:text-sm"
-                    {...props} 
+                    {...props}
                   />
                 ),
               }}
