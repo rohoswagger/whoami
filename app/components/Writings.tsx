@@ -25,12 +25,32 @@ const Writings: React.FC = async () => {
                 className="block group"
               >
                 <article className="border-b border-gray-200 pb-6 md:pb-8 hover:bg-gray-50 transition-colors duration-200 rounded-lg p-4 md:p-6 -m-4 md:-m-6">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 md:mb-3 group-hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-600 text-sm">
-                    {post.date}
-                  </p>
+                  <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+                    {/* Image preview */}
+                    <div className="flex-shrink-0 w-full md:w-48 h-32 md:h-36">
+                      <div 
+                        className="w-full h-full bg-cover bg-center bg-no-repeat rounded-lg"
+                        style={{
+                          backgroundImage: `url(${post.image})`,
+                        }}
+                      />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 md:mb-3 group-hover:text-blue-600 transition-colors">
+                        {post.title}
+                      </h2>
+                      <p className="text-gray-600 text-sm mb-2 md:mb-3">
+                        {post.date}
+                      </p>
+                      {post.preview && (
+                        <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                          {post.preview}
+                        </p>
+                      )}
+                    </div>
+                  </div>
                 </article>
               </Link>
             ))

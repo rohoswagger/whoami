@@ -3,6 +3,52 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getWritingBySlug } from "@/utils/writingsUtils";
 import ReactMarkdown from "react-markdown";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const post = await getWritingBySlug(params.id);
+
+  if (!post) {
+    return {
+      title: "Writing Not Found",
+      description: "The requested writing could not be found.",
+    };
+  }
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://rohoswagger.vercel.app";
+  const imageUrl = `${baseUrl}${post.image}`;
+
+  return {
+    title: `${post.title} | Roshan Desai`,
+    description: post.preview || `Read ${post.title} by Roshan Desai`,
+    openGraph: {
+      title: post.title,
+      description: post.preview || `Read ${post.title} by Roshan Desai`,
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Roshan Desai"],
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      siteName: "Roshan Desai",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.preview || `Read ${post.title} by Roshan Desai`,
+      images: [imageUrl],
+      creator: "@rohoswagger",
+    },
+    alternates: {
+      canonical: `${baseUrl}/writings/${post.slug}`,
+    },
+  };
+}
 
 export default async function Writing({ params }: { params: { id: string } }) {
   const post = await getWritingBySlug(params.id);
