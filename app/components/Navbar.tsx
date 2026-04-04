@@ -22,11 +22,17 @@ const Navbar: React.FC = () => {
           >
             writings
           </Link>
-          <Link 
-            href="/content" 
+          <Link
+            href="/content"
             className="text-sm md:text-base text-gray-700 hover:text-gray-900 transition-colors"
           >
             content
+          </Link>
+          <Link
+            href="/docs"
+            className="text-sm md:text-base text-gray-700 hover:text-gray-900 transition-colors"
+          >
+            docs
           </Link>
           
           {/* Social links - small and subtle */}

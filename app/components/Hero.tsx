@@ -2,7 +2,7 @@
 
 const Hero: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center px-4 md:px-8 lg:px-16">
+    <div className="h-screen flex flex-col justify-center px-24 md:px-56 lg:px-96">
       <div className="max-w-4xl space-y-6 md:space-y-8 lg:space-y-12">
         {/* Main heading */}
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-gray-900 leading-tight">

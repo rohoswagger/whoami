@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getWritingBySlug } from "@/utils/writingsUtils";
 import ReactMarkdown from "react-markdown";
 import { Metadata } from "next";
+import CopyCodeBlock from "@/app/components/CopyCodeBlock";
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const post = await getWritingBySlug(params.id);
@@ -134,11 +135,8 @@ export default async function Writing({ params }: { params: { id: string } }) {
                     {...props}
                   />
                 ),
-                pre: ({ ...props }) => (
-                  <pre
-                    className="bg-gray-100 p-3 md:p-4 rounded-lg overflow-x-auto my-4 md:my-6 text-xs md:text-sm"
-                    {...props}
-                  />
+                pre: ({ children }) => (
+                  <CopyCodeBlock>{children}</CopyCodeBlock>
                 ),
               }}
             >
