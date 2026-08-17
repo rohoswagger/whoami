@@ -82,7 +82,7 @@ export default function ContributionHeatmap({ data }: { data: ContributionYear }
 
       <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
         <span className="text-xs text-gray-500">
-          every commit, pull request and review · {fmt(data.from)} → {fmt(data.to)}
+          {fmt(data.from)} → {fmt(data.to)}
           {!data.live && " · cached snapshot"}
         </span>
         <span className="flex items-center gap-1.5 font-mono text-[10px] text-gray-400">

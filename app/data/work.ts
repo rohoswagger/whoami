@@ -96,7 +96,7 @@ export const ROLES: Role[] = [
     period: "Dec 2025 to Present",
     current: true,
     summary:
-      "i lead onyx craft, our ai coworker, and built the chrome extension, website widget and cli. the other half of the job is seo and answer engine work, which now brings in 80% of our inbound.",
+      "building onyx craft, our ai coworker, plus the chrome extension, website widget and cli. the other half of the job is seo and answer engine work, which now brings in 80% of our inbound.",
     facts: [
       { value: "80%", label: "of inbound from answer engines" },
       { value: "22x", label: "weekly visits" },

@@ -8,8 +8,7 @@ import { getContributions } from "@/app/lib/contributions";
 
 export const metadata: Metadata = {
   title: "work | Roshan Desai",
-  description:
-    "What I've shipped, role by role, with contribution counts pulled straight from the GitHub API.",
+  description: "What I've shipped.",
 };
 
 export default async function WorkPage() {
@@ -21,8 +20,7 @@ export default async function WorkPage() {
         <header className="rise">
           <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">work</h1>
           <p className="mt-4 max-w-[60ch] text-lg text-gray-600 md:text-xl">
-            what i&apos;ve actually shipped, role by role. the numbers come straight from the
-            github api, not rounded up.
+            what i&apos;ve shipped
           </p>
         </header>
 

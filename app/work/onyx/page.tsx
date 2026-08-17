@@ -112,8 +112,8 @@ export default function OnyxPage() {
               founding growth · Dec 2025 to Present
             </p>
             <p className="mt-6 max-w-[68ch] text-lg leading-relaxed text-gray-600">
-              my title says growth, but most of my week is spent writing code. i lead onyx craft,
-              and i built the chrome extension, the website widget, and the cli. the other half of
+              my title says growth, but most of my week is spent writing code: building onyx craft,
+              the chrome extension, the website widget, and the cli. the other half of
               the job is getting people to onyx in the first place, which is mostly seo and
               answer engine work.
             </p>
