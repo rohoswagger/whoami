@@ -3,11 +3,11 @@ title: "whoami"
 date: "03-04-2004"
 ---
 
-> This is a living document. Last updated January 20th, 2025
+> This is a living document. Last updated August 17th, 2026
 
 hi! I'm Roshan. I'm curious about the world and how it can be changed with technology. I thought I'd start by telling you a little about myself and how I like to work.
 
-Currently, I'm based out of SF and working at Robinhood! My current goal is to get into YCombinator, and I'm applying every cycle until I get in :D
+Currently, I'm based out of SF and working at [Onyx](https://onyx.app)! My current goal is to get to 1M ARR :D
 
 ## dream
 
