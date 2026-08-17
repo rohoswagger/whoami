@@ -16,8 +16,14 @@ const Navbar: React.FC = () => {
           roshan
         </div>
         <nav className="flex items-center space-x-4 md:space-x-8">
-          <Link 
-            href="/writings" 
+          <Link
+            href="/work"
+            className="text-sm md:text-base text-gray-700 hover:text-gray-900 transition-colors"
+          >
+            work
+          </Link>
+          <Link
+            href="/writings"
             className="text-sm md:text-base text-gray-700 hover:text-gray-900 transition-colors"
           >
             writings

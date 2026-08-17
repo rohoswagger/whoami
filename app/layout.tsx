@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
+
+const figtree = localFont({
+  src: "./fonts/Figtree.ttf",
+  variable: "--font-figtree",
+  display: "swap",
+});
+
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Roshan Desai",
@@ -13,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${figtree.variable} ${geistMono.variable}`}>
       <body className="antialiased bg-white">
         <div className="min-h-screen">
           <Navbar />
