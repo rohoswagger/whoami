@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 
   return {
     title: `${doc.title} | Roshan Desai`,
-    description: doc.description || `${doc.title} — technical reference by Roshan Desai`,
+    description: doc.description || `${doc.title}: technical reference by Roshan Desai`,
     alternates: {
       canonical: `${baseUrl}/docs/${doc.slug}`,
     },
