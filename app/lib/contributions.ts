@@ -25,7 +25,9 @@ function parse(html: string): ContributionYear | null {
 
   // id -> count, read off the screen-reader tooltips ("11 contributions on August 17th.")
   const counts = new Map<string, number>();
-  const tips = Array.from(html.matchAll(/<tool-tip[^>]*\bfor="([^"]+)"[^>]*>([^<]*)<\/tool-tip>/g));
+  const tips = Array.from(
+    html.matchAll(/<tool-tip[^>]*\bfor="([^"]+)"[^>]*>([^<]*)<\/tool-tip>/g),
+  );
   for (const [, id, text] of tips) {
     const m = text.match(/^([\d,]+)\s+contribution/i);
     counts.set(id, m ? Number(m[1].replace(/,/g, "")) : 0);
@@ -33,7 +35,9 @@ function parse(html: string): ContributionYear | null {
 
   const days: ContributionDay[] = [];
   const cells = Array.from(
-    html.matchAll(/<td\b[^>]*class="[^"]*ContributionCalendar-day[^"]*"[^>]*>/g)
+    html.matchAll(
+      /<td\b[^>]*class="[^"]*ContributionCalendar-day[^"]*"[^>]*>/g,
+    ),
   );
   for (const [tag] of cells) {
     const date = tag.match(/data-date="([\d-]+)"/)?.[1];

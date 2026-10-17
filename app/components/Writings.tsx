@@ -11,12 +11,10 @@ const Writings: React.FC = async () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 md:mb-12 text-center">
           writings
         </h1>
-        
+
         <div className="space-y-6 md:space-y-8">
           {posts.length === 0 ? (
-            <div className="text-center text-gray-500">
-              nothing here yet 🙈
-            </div>
+            <div className="text-center text-gray-500">nothing here yet 🙈</div>
           ) : (
             posts.map((post) => (
               <Link
@@ -28,14 +26,14 @@ const Writings: React.FC = async () => {
                   <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                     {/* Image preview */}
                     <div className="flex-shrink-0 w-full md:w-48 h-32 md:h-36">
-                      <div 
+                      <div
                         className="w-full h-full bg-cover bg-center bg-no-repeat rounded-lg"
                         style={{
                           backgroundImage: `url(${post.image})`,
                         }}
                       />
                     </div>
-                    
+
                     {/* Content */}
                     <div className="flex-1 min-w-0">
                       <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 md:mb-3 group-hover:text-blue-600 transition-colors">
@@ -56,10 +54,10 @@ const Writings: React.FC = async () => {
             ))
           )}
         </div>
-        
+
         <div className="text-center mt-12 md:mt-16">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="text-gray-600 hover:text-gray-900 transition-colors"
           >
             ← back home

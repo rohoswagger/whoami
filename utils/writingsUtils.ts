@@ -17,33 +17,33 @@ const writingsDirectory = path.join(process.cwd(), "_writings");
 
 function extractFirstSentence(content: string): string {
   // Remove frontmatter if present
-  const contentWithoutFrontmatter = content.replace(/^---[\s\S]*?---\n/, '');
-  
+  const contentWithoutFrontmatter = content.replace(/^---[\s\S]*?---\n/, "");
+
   // Split by sentences (look for periods, exclamation marks, question marks followed by space and capital letter or end of string)
   const sentences = contentWithoutFrontmatter
     .split(/(?<=[.!?])\s+(?=[A-Z])/)
-    .filter(sentence => sentence.trim().length > 0);
-  
-  if (sentences.length === 0) return '';
-  
+    .filter((sentence) => sentence.trim().length > 0);
+
+  if (sentences.length === 0) return "";
+
   // Get the first sentence and clean it up
   let firstSentence = sentences[0].trim();
-  
+
   // Remove markdown formatting
   firstSentence = firstSentence
-    .replace(/^#+\s*/, '') // Remove heading markers
-    .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold
-    .replace(/\*(.*?)\*/g, '$1') // Remove italic
-    .replace(/\[(.*?)\]\(.*?\)/g, '$1') // Remove links, keep text
-    .replace(/`(.*?)`/g, '$1') // Remove code formatting
-    .replace(/^>\s*/, '') // Remove blockquote markers
+    .replace(/^#+\s*/, "") // Remove heading markers
+    .replace(/\*\*(.*?)\*\*/g, "$1") // Remove bold
+    .replace(/\*(.*?)\*/g, "$1") // Remove italic
+    .replace(/\[(.*?)\]\(.*?\)/g, "$1") // Remove links, keep text
+    .replace(/`(.*?)`/g, "$1") // Remove code formatting
+    .replace(/^>\s*/, "") // Remove blockquote markers
     .trim();
-  
+
   // Limit to 150 characters for preview
   if (firstSentence.length > 150) {
-    firstSentence = firstSentence.substring(0, 147) + '...';
+    firstSentence = firstSentence.substring(0, 147) + "...";
   }
-  
+
   return firstSentence;
 }
 
@@ -54,7 +54,7 @@ export async function getWritingSlugs(): Promise<string[]> {
 export async function getAllWritings(): Promise<Writing[]> {
   const slugs = await getWritingSlugs();
   const writing = await Promise.all(
-    slugs.map((slug) => getWritingBySlug(slug))
+    slugs.map((slug) => getWritingBySlug(slug)),
   );
 
   writing.sort((a, b) => {

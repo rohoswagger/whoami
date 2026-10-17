@@ -1,6 +1,19 @@
 import type { ContributionYear } from "@/app/lib/contributions";
 
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 // GitHub hands us a 0–4 level per day; we only restyle it into our own ramp.
 const FILL = [
@@ -19,14 +32,21 @@ const fmt = (iso: string) =>
     timeZone: "UTC",
   });
 
-export default function ContributionHeatmap({ data }: { data: ContributionYear }) {
+export default function ContributionHeatmap({
+  data,
+}: {
+  data: ContributionYear;
+}) {
   const { days } = data;
   if (!days.length) return null;
 
   // Pad to a Sunday-aligned grid, then chunk into columns of 7.
   const lead = new Date(days[0].date + "T00:00:00Z").getUTCDay();
-  const cells: (typeof days[number] | null)[] = [...Array(lead).fill(null), ...days];
-  const weeks: (typeof days[number] | null)[][] = [];
+  const cells: ((typeof days)[number] | null)[] = [
+    ...Array(lead).fill(null),
+    ...days,
+  ];
+  const weeks: ((typeof days)[number] | null)[][] = [];
   for (let i = 0; i < cells.length; i += 7) weeks.push(cells.slice(i, i + 7));
 
   const monthLabels = weeks.map((w, i) => {
@@ -35,7 +55,11 @@ export default function ContributionHeatmap({ data }: { data: ContributionYear }
     const d = new Date(first.date + "T00:00:00Z");
     if (d.getUTCDate() > 7) return null;
     const prev = weeks[i - 1]?.find(Boolean);
-    if (prev && new Date(prev.date + "T00:00:00Z").getUTCMonth() === d.getUTCMonth()) return null;
+    if (
+      prev &&
+      new Date(prev.date + "T00:00:00Z").getUTCMonth() === d.getUTCMonth()
+    )
+      return null;
     return MONTHS[d.getUTCMonth()];
   });
 
@@ -45,7 +69,10 @@ export default function ContributionHeatmap({ data }: { data: ContributionYear }
         <div className="inline-block min-w-full">
           <div className="flex gap-[3px] pl-9">
             {monthLabels.map((m, i) => (
-              <div key={i} className="w-[11px] shrink-0 font-mono text-[10px] text-gray-400">
+              <div
+                key={i}
+                className="w-[11px] shrink-0 font-mono text-[10px] text-gray-400"
+              >
                 {m ? <span className="whitespace-nowrap">{m}</span> : null}
               </div>
             ))}
@@ -63,7 +90,8 @@ export default function ContributionHeatmap({ data }: { data: ContributionYear }
                 <div key={wi} className="flex flex-col gap-[3px]">
                   {Array.from({ length: 7 }).map((_, di) => {
                     const day = week[di];
-                    if (!day) return <div key={di} className="h-[11px] w-[11px]" />;
+                    if (!day)
+                      return <div key={di} className="h-[11px] w-[11px]" />;
                     return (
                       <div
                         key={di}

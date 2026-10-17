@@ -18,7 +18,9 @@ export default async function WorkPage() {
     <div className="px-6 py-12 md:py-20">
       <div className="mx-auto max-w-4xl">
         <header className="rise">
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">work</h1>
+          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
+            work
+          </h1>
           <p className="mt-4 max-w-[60ch] text-lg text-gray-600 md:text-xl">
             what i&apos;ve shipped
           </p>

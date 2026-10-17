@@ -18,7 +18,8 @@ const Link: React.FC<LinkProps> = ({
       href={href}
       className={`text-blue-500 hover:text-blue-600 underline cursor-pointer ${className}`}
       target={openInNewTab ? "_blank" : "_self"}
-      rel={openInNewTab ? "noopener noreferrer" : undefined}>
+      rel={openInNewTab ? "noopener noreferrer" : undefined}
+    >
       {children}
     </a>
   );

@@ -15,7 +15,9 @@ export default function CopyCodeBlock({ children }: CopyCodeBlockProps) {
     if (typeof node === "number") return String(node);
     if (Array.isArray(node)) return node.map(extractText).join("");
     if (React.isValidElement(node)) {
-      return extractText((node.props as { children?: React.ReactNode }).children);
+      return extractText(
+        (node.props as { children?: React.ReactNode }).children,
+      );
     }
     return "";
   }
@@ -38,7 +40,11 @@ export default function CopyCodeBlock({ children }: CopyCodeBlockProps) {
         aria-label="Copy code"
         className="absolute top-2.5 right-2.5 p-1.5 rounded bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white transition-colors duration-150"
       >
-        {copied ? <FiCheck className="w-3.5 h-3.5" /> : <FiCopy className="w-3.5 h-3.5" />}
+        {copied ? (
+          <FiCheck className="w-3.5 h-3.5" />
+        ) : (
+          <FiCopy className="w-3.5 h-3.5" />
+        )}
       </button>
     </div>
   );

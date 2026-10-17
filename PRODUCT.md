@@ -1,6 +1,6 @@
 # whoami: Roshan Desai's personal site
 
-**Register:** brand. This is a portfolio; the design *is* the product.
+**Register:** brand. This is a portfolio; the design _is_ the product.
 
 ## What it is
 
@@ -11,7 +11,7 @@ GitHub API rather than rounded up by hand.
 ## Audience & scene
 
 An engineer or a hiring manager opens this on a laptop, mid-afternoon, skimming for
-one answer: *what has this person actually built, and at what volume?* They're
+one answer: _what has this person actually built, and at what volume?_ They're
 suspicious of portfolios that assert seniority without evidence. The page has to
 answer with data before it answers with adjectives.
 
@@ -38,7 +38,7 @@ dark mode, SaaS hero-metric template.
 ## Color strategy
 
 Restrained, tipping to Committed inside the data. White ground, near-black ink, and a
-single saturated blue that carries *all* the quantitative meaning: the contribution
+single saturated blue that carries _all_ the quantitative meaning: the contribution
 heatmap, links, focus rings. Colour appears where there's a number behind it; nowhere
 decorative. Blue is inherited from the existing site (links, selection), so this is
 identity-preservation, not a fresh pick.

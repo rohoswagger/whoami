@@ -41,14 +41,21 @@ export default function CountUp({
       setDisplay(0);
       raf = requestAnimationFrame(tick);
       // Belt and braces: if rAF is throttled away, land on the real number.
-      window.setTimeout(() => setDisplay((d) => (d === value ? d : value)), durationMs + 600);
+      window.setTimeout(
+        () => setDisplay((d) => (d === value ? d : value)),
+        durationMs + 600,
+      );
     };
 
     const io = new IntersectionObserver(
       (entries) => {
-        if (entries.some((e) => e.isIntersecting) && document.visibilityState === "visible") run();
+        if (
+          entries.some((e) => e.isIntersecting) &&
+          document.visibilityState === "visible"
+        )
+          run();
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
     io.observe(el);
 

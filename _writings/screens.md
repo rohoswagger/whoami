@@ -17,7 +17,7 @@ This has got to stop.
 
 —
 
-I’m totally for making the world a better place, and I can see firsthand the positive impacts technology has had on my life. I’m able to talk to my grandparents in India,  trade stocks and invest my money how I want to, and capture every important moment in a picture for my kids and their kids to see. But we’ve taken it a little too far. 
+I’m totally for making the world a better place, and I can see firsthand the positive impacts technology has had on my life. I’m able to talk to my grandparents in India, trade stocks and invest my money how I want to, and capture every important moment in a picture for my kids and their kids to see. But we’ve taken it a little too far.
 
 I’m invested in building a screenless future, one where we recognize the importance of what’s in front of us and truly appreciate the beautiful things and people we’ve been given in this world. One where we seek out the people who matter to us the most, rather than rotting alone. One where we have to talk to that person next to us, because there is no phone to pull out and browse. One where we appreciate the raw beauty of life.
 

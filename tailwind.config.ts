@@ -13,7 +13,12 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ["var(--font-figtree)", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: [
+          "var(--font-figtree)",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
         mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
       },
       transitionTimingFunction: {

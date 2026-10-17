@@ -3,7 +3,12 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import CountUp from "@/app/components/CountUp";
 import Figure from "@/app/components/Figure";
-import { GROWTH, ONYX_REPOS, ONYX_TOTALS, type RepoStat } from "@/app/data/work";
+import {
+  GROWTH,
+  ONYX_REPOS,
+  ONYX_TOTALS,
+  type RepoStat,
+} from "@/app/data/work";
 
 export const metadata: Metadata = {
   title: "onyx | Roshan Desai",
@@ -17,7 +22,13 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return <h2 className="text-sm font-medium text-gray-500">{children}</h2>;
 }
 
-function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
+function ExternalLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
   return (
     <a
       href={href}
@@ -62,7 +73,9 @@ function RepoCard({ repo }: { repo: RepoStat }) {
           { k: "reviewed", v: repo.prsReviewed },
         ].map((s) => (
           <div key={s.k}>
-            <dd className="text-2xl font-semibold tabular-nums text-gray-900">{n(s.v)}</dd>
+            <dd className="text-2xl font-semibold tabular-nums text-gray-900">
+              {n(s.v)}
+            </dd>
             <dt className="mt-0.5 text-[11px] text-gray-500">{s.k}</dt>
           </div>
         ))}
@@ -76,9 +89,18 @@ function RepoCard({ repo }: { repo: RepoStat }) {
 }
 
 const SURFACES = [
-  { name: "chrome extension", note: "onyx in the browser, on whatever page you're already on" },
-  { name: "website widget", note: "drop-in search and chat for a company's own site" },
-  { name: "cli and tui", note: "onyx from the terminal, for people who live there" },
+  {
+    name: "chrome extension",
+    note: "onyx in the browser, on whatever page you're already on",
+  },
+  {
+    name: "website widget",
+    note: "drop-in search and chat for a company's own site",
+  },
+  {
+    name: "cli and tui",
+    note: "onyx from the terminal, for people who live there",
+  },
 ];
 
 export default function OnyxPage() {
@@ -102,7 +124,9 @@ export default function OnyxPage() {
 
           <header className="mt-8">
             <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-              <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">onyx</h1>
+              <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
+                onyx
+              </h1>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 font-mono text-[11px] uppercase tracking-wider text-blue-700">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
                 now
@@ -112,10 +136,10 @@ export default function OnyxPage() {
               founding growth · Dec 2025 to Present
             </p>
             <p className="mt-6 max-w-[68ch] text-lg leading-relaxed text-gray-600">
-              my title says growth, but most of my week is spent writing code: building onyx craft,
-              the chrome extension, the website widget, and the cli. the other half of
-              the job is getting people to onyx in the first place, which is mostly seo and
-              answer engine work.
+              my title says growth, but most of my week is spent writing code:
+              building onyx craft, the chrome extension, the website widget, and
+              the cli. the other half of the job is getting people to onyx in
+              the first place, which is mostly seo and answer engine work.
             </p>
           </header>
         </div>
@@ -128,15 +152,17 @@ export default function OnyxPage() {
           </h3>
           <div className="reveal mt-4 max-w-[68ch] space-y-4 text-base leading-relaxed text-gray-600">
             <p>
-              craft is the product i lead. you give it a task, it pulls the context it needs from
-              across the company, and it does the work.
+              craft is the product i lead. you give it a task, it pulls the
+              context it needs from across the company, and it does the work.
             </p>
             <p>
-              almost all my time there goes to two things. the first is the harness, which is the
-              logic around the model: what context gets pulled in, which tools get called in what
-              order, how many steps a run gets, and when it should stop and ask a human. the
-              second is artifact quality. a draft that is 90% right still costs you the full hour
-              to fix, so most of the work is closing that last stretch.
+              almost all my time there goes to two things. the first is the
+              harness, which is the logic around the model: what context gets
+              pulled in, which tools get called in what order, how many steps a
+              run gets, and when it should stop and ask a human. the second is
+              artifact quality. a draft that is 90% right still costs you the
+              full hour to fix, so most of the work is closing that last
+              stretch.
             </p>
           </div>
         </section>
@@ -145,12 +171,15 @@ export default function OnyxPage() {
         <section aria-label="Other surfaces" className="mt-16 md:mt-20">
           <SectionLabel>what else i built</SectionLabel>
           <p className="mt-4 max-w-[68ch] text-base leading-relaxed text-gray-600">
-            onyx is only useful if you can reach it from where you already work, so i built the
-            other ways in.
+            onyx is only useful if you can reach it from where you already work,
+            so i built the other ways in.
           </p>
           <dl className="reveal mt-6 divide-y divide-gray-100 border-y border-gray-200">
             {SURFACES.map((s) => (
-              <div key={s.name} className="grid gap-1 py-4 sm:grid-cols-[14rem_minmax(0,1fr)] sm:gap-6">
+              <div
+                key={s.name}
+                className="grid gap-1 py-4 sm:grid-cols-[14rem_minmax(0,1fr)] sm:gap-6"
+              >
                 <dt className="font-mono text-sm text-gray-900">{s.name}</dt>
                 <dd className="text-sm text-gray-600">{s.note}</dd>
               </div>
@@ -162,8 +191,9 @@ export default function OnyxPage() {
         <section aria-label="GitHub contributions" className="mt-16 md:mt-20">
           <SectionLabel>on github</SectionLabel>
           <p className="mt-4 max-w-[68ch] text-base leading-relaxed text-gray-600">
-            almost all of it ships through two repos. the review number is the one i care about
-            most, since a lot of the job is unblocking other people.
+            almost all of it ships through two repos. the review number is the
+            one i care about most, since a lot of the job is unblocking other
+            people.
           </p>
 
           <div
@@ -186,7 +216,8 @@ export default function OnyxPage() {
           </div>
 
           <p className="mt-4 font-mono text-xs text-gray-400">
-            +{n(ONYX_TOTALS.additions)} / −{n(ONYX_TOTALS.deletions)} lines across both repos
+            +{n(ONYX_TOTALS.additions)} / −{n(ONYX_TOTALS.deletions)} lines
+            across both repos
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -201,15 +232,19 @@ export default function OnyxPage() {
           <SectionLabel>seo and geo</SectionLabel>
           <div className="mt-4 max-w-[68ch] space-y-4 text-base leading-relaxed text-gray-600">
             <p>
-              the bet i made early was that people had started asking chatgpt and perplexity which
-              tool to use instead of googling it and opening ten tabs. if that was true, then the
-              thing worth owning was being the source those models quote, not the tenth blue link.
+              the bet i made early was that people had started asking chatgpt
+              and perplexity which tool to use instead of googling it and
+              opening ten tabs. if that was true, then the thing worth owning
+              was being the source those models quote, not the tenth blue link.
             </p>
             <p>
-              so we wrote for the questions people actually type, and published the benchmarks and
-              leaderboards they were already looking for. most of it lives at{" "}
-              <ExternalLink href="https://onyx.app/insights">onyx.app/insights</ExternalLink>. it
-              paid off:{" "}
+              so we wrote for the questions people actually type, and published
+              the benchmarks and leaderboards they were already looking for.
+              most of it lives at{" "}
+              <ExternalLink href="https://onyx.app/insights">
+                onyx.app/insights
+              </ExternalLink>
+              . it paid off:{" "}
               <strong className="font-semibold text-gray-900">
                 80% of our inbound now comes through it
               </strong>
@@ -264,8 +299,9 @@ export default function OnyxPage() {
         <section aria-label="Influencer marketing" className="mt-16 md:mt-20">
           <SectionLabel>influencer marketing</SectionLabel>
           <p className="mt-4 max-w-[68ch] text-base leading-relaxed text-gray-600">
-            the leaderboards were the hook. i wrote the reddit posts myself and shipped the pages
-            behind them, then worked with creators on x to time launches with their audiences.
+            the leaderboards were the hook. i wrote the reddit posts myself and
+            shipped the pages behind them, then worked with creators on x to
+            time launches with their audiences.
           </p>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
@@ -293,7 +329,9 @@ export default function OnyxPage() {
                   <CountUp value={3} />
                   M+
                 </div>
-                <div className="mt-2 text-sm text-gray-600">views across the posts</div>
+                <div className="mt-2 text-sm text-gray-600">
+                  views across the posts
+                </div>
               </div>
               <p className="mt-4 min-h-[48px] border-t border-gray-100 pt-3 font-mono text-[11px] leading-relaxed text-gray-400">
                 pictured:{" "}
@@ -324,7 +362,9 @@ export default function OnyxPage() {
                 <div className="font-mono text-4xl font-semibold tabular-nums leading-none text-gray-900 md:text-5xl">
                   671.3K
                 </div>
-                <div className="mt-2 text-sm text-gray-600">views on the launch post</div>
+                <div className="mt-2 text-sm text-gray-600">
+                  views on the launch post
+                </div>
               </div>
               <p className="mt-4 min-h-[48px] border-t border-gray-100 pt-3 font-mono text-[11px] leading-relaxed text-gray-400">
                 with{" "}
@@ -344,15 +384,18 @@ export default function OnyxPage() {
             EnterpriseRAG-Bench
           </h3>
           <p className="reveal mt-4 max-w-[68ch] text-base leading-relaxed text-gray-600">
-            most rag benchmarks run on clean public documents. company data is not like that. it
-            is duplicated, half of it is out of date, plenty of it contradicts itself, and who can
-            see what matters. this benchmark tries to measure retrieval under those conditions.
+            most rag benchmarks run on clean public documents. company data is
+            not like that. it is duplicated, half of it is out of date, plenty
+            of it contradicts itself, and who can see what matters. this
+            benchmark tries to measure retrieval under those conditions.
           </p>
           <div className="reveal mt-5 flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm">
             <ExternalLink href="https://github.com/onyx-dot-app/EnterpriseRAG-Bench">
               github.com/onyx-dot-app/EnterpriseRAG-Bench
             </ExternalLink>
-            <ExternalLink href="https://arxiv.org/abs/2605.05253">arxiv:2605.05253</ExternalLink>
+            <ExternalLink href="https://arxiv.org/abs/2605.05253">
+              arxiv:2605.05253
+            </ExternalLink>
           </div>
         </section>
 

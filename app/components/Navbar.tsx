@@ -12,7 +12,8 @@ const Navbar: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
         <div
           className="text-lg md:text-xl font-bold cursor-pointer hover:text-gray-600 transition-colors"
-          onClick={() => router.push("/")}>
+          onClick={() => router.push("/")}
+        >
           roshan
         </div>
         <nav className="flex items-center space-x-4 md:space-x-8">
@@ -40,7 +41,7 @@ const Navbar: React.FC = () => {
           >
             docs
           </Link>
-          
+
           {/* Social links - small and subtle */}
           <div className="flex items-center space-x-2 md:space-x-3 ml-2 md:ml-4 pl-2 md:pl-4 border-l border-gray-200">
             {LINKS.map((link) => (

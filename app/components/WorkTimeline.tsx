@@ -20,7 +20,9 @@ function Body({ role }: { role: Role }) {
   return (
     <>
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <h3 className="text-2xl font-semibold text-gray-900 md:text-3xl">{role.org}</h3>
+        <h3 className="text-2xl font-semibold text-gray-900 md:text-3xl">
+          {role.org}
+        </h3>
         <span className="text-sm text-gray-500 md:text-base">{role.title}</span>
         {role.current && (
           <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-blue-700">
@@ -32,7 +34,9 @@ function Body({ role }: { role: Role }) {
 
       <p className="mt-1 font-mono text-xs text-gray-400">{role.period}</p>
 
-      <p className="mt-4 max-w-[68ch] text-base leading-relaxed text-gray-600">{role.summary}</p>
+      <p className="mt-4 max-w-[68ch] text-base leading-relaxed text-gray-600">
+        {role.summary}
+      </p>
 
       <Facts role={role} />
     </>

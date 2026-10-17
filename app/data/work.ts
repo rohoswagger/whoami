@@ -78,7 +78,7 @@ export const ONYX_TOTALS = ONYX_REPOS.reduce(
     additions: a.additions + r.additions,
     deletions: a.deletions + r.deletions,
   }),
-  { commits: 0, merged: 0, reviewed: 0, additions: 0, deletions: 0 }
+  { commits: 0, merged: 0, reviewed: 0, additions: 0, deletions: 0 },
 );
 
 /** Growth numbers. `from` and `to` are the start and current values. */

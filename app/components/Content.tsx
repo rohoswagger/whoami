@@ -9,7 +9,8 @@ const Content: React.FC = () => {
         </h1>
 
         <p className="text-lg md:text-xl text-gray-600 text-left mb-8 md:mb-12 max-w-2xl">
-          things that shape how i think. information diet is really important so i try to be pretty critical about what i consume.
+          things that shape how i think. information diet is really important so
+          i try to be pretty critical about what i consume.
         </p>
 
         <div className="space-y-8 md:space-y-10">
@@ -21,13 +22,15 @@ const Content: React.FC = () => {
               <li>
                 • Can&apos;t Hurt Me - David Goggins
                 <div className="ml-5 text-gray-500 text-xs md:text-sm">
-                  we are all capable of more than we think - your &quot;limits&quot; are only self-imposed
+                  we are all capable of more than we think - your
+                  &quot;limits&quot; are only self-imposed
                 </div>
               </li>
               <li>
                 • The Alchemist - Paulo Coelho
                 <div className="ml-5 text-gray-500 text-xs md:text-sm">
-                  follow your dreams and trust the journey, side quests are everything
+                  follow your dreams and trust the journey, side quests are
+                  everything
                 </div>
               </li>
               <li>
@@ -51,7 +54,9 @@ const Content: React.FC = () => {
               <li>
                 • Glucose Revolution - Jesse Inchauspe
                 <div className="ml-5 text-gray-500 text-xs md:text-sm">
-                  got diagnosed with prediabetes at 20 despite being in great shape (5&apos;9 140lbs with ~10% body fat), these small hacks helped me reverse it by 21
+                  got diagnosed with prediabetes at 20 despite being in great
+                  shape (5&apos;9 140lbs with ~10% body fat), these small hacks
+                  helped me reverse it by 21
                 </div>
               </li>
             </ul>
@@ -62,13 +67,27 @@ const Content: React.FC = () => {
             </h2>
             <ul className="space-y-4 md:space-y-5 text-sm md:text-base text-gray-700">
               <li>
-                • <a href="https://www.youtube.com/watch?v=tnBQmEqBCY0" target="_blank" rel="noopener noreferrer" className="underline">Elon Musk on how to build the future</a>
+                •{" "}
+                <a
+                  href="https://www.youtube.com/watch?v=tnBQmEqBCY0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  Elon Musk on how to build the future
+                </a>
               </li>
+              <li>• Truett Hanes does 10000 pullups</li>
               <li>
-                • Truett Hanes does 10000 pullups
-              </li>
-              <li>
-                • <a href="https://www.youtube.com/watch?v=c8VcUnz3nVc&t=2130s" target="_blank" rel="noopener noreferrer" className="underline">MrBeast is obsessed with making videos</a>
+                •{" "}
+                <a
+                  href="https://www.youtube.com/watch?v=c8VcUnz3nVc&t=2130s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  MrBeast is obsessed with making videos
+                </a>
               </li>
             </ul>
           </div>
