@@ -33,7 +33,8 @@ const Hero: React.FC = () => {
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-500 leading-relaxed">
             plus some small things i&apos;ve built:{" "}
             <Link href="https://swaggin.dev">swaggin.dev</Link>,{" "}
-            <Link href="https://trygojo.com">trygojo.com</Link>
+            <Link href="https://trygojo.com">trygojo.com</Link>,{" "}
+            <Link href="https://searchmaxx.link">searchmaxx.link</Link>
           </p>
         </div>
 
