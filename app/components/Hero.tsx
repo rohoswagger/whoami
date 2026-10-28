@@ -30,6 +30,9 @@ const Hero: React.FC = () => {
             running hackathons with{" "}
             <span className="font-semibold">1200+ participants</span>
           </p>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
+            in a previous life, i was a top 200 violist in the nation
+          </p>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-500 leading-relaxed">
             plus some small things i&apos;ve built:{" "}
             <Link href="https://swaggin.dev">swaggin.dev</Link>,{" "}

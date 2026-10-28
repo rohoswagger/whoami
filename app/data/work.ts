@@ -114,4 +114,13 @@ export const ROLES: Role[] = [
       "ran hackathons in college: sponsors, venue, judging, and the thousand small things that make a weekend actually work for the people who showed up.",
     facts: [{ value: "1200+", label: "attendees" }],
   },
+  {
+    id: "viola",
+    org: "viola",
+    title: "violist",
+    period: "a previous life",
+    current: false,
+    summary: "in a previous life, i was a top 200 violist in the nation.",
+    facts: [],
+  },
 ];
