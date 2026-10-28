@@ -3,15 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-
-  /* The one quantitative colour. It only appears where a number is behind it. */
-  --data-0: #eef1f5;
-  --data-1: #bfd8f7;
-  --data-2: #7aaef0;
-  --data-3: #2f7fe0;
-  --data-4: #14539e;
+  --background: #f3eedf;
+  --foreground: #30362a;
+  --data-0: #e6e5d5;
+  --data-1: #d1d8b5;
+  --data-2: #a3b57f;
+  --data-3: #738e50;
+  --data-4: #405d32;
 
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -19,6 +17,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: var(--font-figtree), sans-serif;
 }
 
 html {
@@ -26,8 +25,8 @@ html {
 }
 
 ::selection {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #e8c94c;
+  color: #30362a;
 }
 
 h1,
@@ -119,4 +118,60 @@ p {
   .reveal {
     animation: none !important;
   }
+}
+
+:focus-visible { outline: 2px solid #64753e; outline-offset: 4px; }
+* { scrollbar-color: #9caa7c var(--background); scrollbar-width: thin; }
+a { text-underline-offset: 4px; }
+.site-navbar { background: var(--background); }
+.site-brand { display: inline-flex; align-items: center; gap: 10px; }
+.site-brand img { image-rendering: pixelated; }
+.site-navbar nav { font-family: var(--font-geist-mono), monospace; }
+.site-navbar nav > a:hover { color: #405d32; text-decoration: underline; text-decoration-color: #b88e20; }
+.home-hero { min-height: 0; height: calc(100dvh - 64px); padding-top: 24px; padding-bottom: 24px; }
+.home-hero .home-heading { letter-spacing: -.04em; }
+.home-hero .home-viola img { display: inline-block; margin-right: 8px; vertical-align: middle; image-rendering: pixelated; }
+.home-hero .home-projects a:hover, .home-hero .home-contact a:hover { background: #e8c94c; }
+
+@media (min-width: 768px) {
+  .home-hero { height: calc(100dvh - 80px); }
+}
+@media (max-height: 800px) {
+  .home-hero .home-intro { --home-gap: 20px; }
+  .home-hero .home-intro > :not([hidden]) ~ :not([hidden]) { margin-top: var(--home-gap); }
+  .home-hero .home-intro .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 12px; }
+  .home-hero .home-contact { padding-top: 8px; }
+  .home-hero .home-heading { font-size: clamp(36px, 6vw, 76px); }
+  .home-hero .home-current { font-size: clamp(22px, 3vw, 32px); }
+}
+@media (max-width: 650px) {
+  .site-navbar nav { gap: 12px; }
+  .site-navbar nav > :not([hidden]) ~ :not([hidden]) { margin-left: 0; }
+  .site-navbar nav > a { font-size: 11px; }
+  .site-brand { font-size: 16px; gap: 6px; }
+  .site-brand img { width: 20px; height: 20px; }
+  .site-navbar nav > div { padding-left: 10px; gap: 8px; }
+  .site-navbar nav > div > :not([hidden]) ~ :not([hidden]) { margin-left: 0; }
+}
+@media (max-width: 360px) {
+  .site-brand { font-size: 0; gap: 0; }
+  .site-brand img { width: 24px; height: 24px; }
+}
+@media (max-height: 700px) and (max-width: 767px) {
+  .home-hero .home-intro { --home-gap: 16px; }
+  .home-hero { padding-top: 16px; padding-bottom: 16px; }
+  .home-hero .home-heading { font-size: 36px; }
+  .home-hero .home-current { font-size: 21px; }
+  .home-hero .home-history { font-size: 16px; }
+  .home-hero .home-viola, .home-hero .home-projects, .home-hero .home-contact p { font-size: 14px; }
+  .home-hero .home-contact { padding-top: 0; }
+}
+@media (max-height: 480px) and (min-width: 651px) {
+  .home-hero .home-intro { --home-gap: 12px; max-width: 900px; }
+  .home-hero { padding-top: 8px; padding-bottom: 8px; }
+  .home-hero .home-heading { font-size: 36px; }
+  .home-hero .home-current { font-size: 22px; }
+  .home-hero .home-history { font-size: 16px; }
+  .home-hero .home-viola, .home-hero .home-projects, .home-hero .home-contact p { font-size: 14px; }
+  .home-hero .home-contact { padding-top: 0; }
 }
