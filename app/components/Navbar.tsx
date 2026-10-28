@@ -1,21 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { LINKS } from "@/public/data/links";
 
 const Navbar: React.FC = () => {
-  const router = useRouter();
-
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 site-navbar border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
-        <div
-          className="text-lg md:text-xl font-bold cursor-pointer hover:text-gray-600 transition-colors"
-          onClick={() => router.push("/")}
-        >
+        <Link href="/" className="site-brand text-lg md:text-xl font-bold hover:text-gray-600 transition-colors">
+          <Image src="/img/icons/hello.svg" width="24" height="24" alt="" aria-hidden="true" />
           roshan
-        </div>
+        </Link>
         <nav className="flex items-center space-x-4 md:space-x-8">
           <Link
             href="/work"
@@ -47,6 +43,7 @@ const Navbar: React.FC = () => {
             {LINKS.map((link) => (
               <a
                 key={link.href}
+                aria-label={link.name}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"

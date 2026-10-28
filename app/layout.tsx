@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${figtree.variable} ${geistMono.variable}`}>
-      <body className="antialiased bg-white">
+      <body className="antialiased">
         <div className="min-h-screen">
           <Navbar />
           <main className="pt-16 md:pt-20">{children}</main>
